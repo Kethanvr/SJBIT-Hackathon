@@ -54,12 +54,7 @@ const SettingsMenu = ({ hidePro = false }) => {
       label: t("language"),
       to: "/account/language",
     },
-    {
-      id: "about",
-      icon: <FiInfo className="w-6 h-6 text-gray-400" />,
-      label: t("aboutCreators"),
-      to: "/about-creators",
-    },
+   
   ];
 
   return (
