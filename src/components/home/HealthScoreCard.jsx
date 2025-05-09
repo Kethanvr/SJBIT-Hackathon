@@ -1,44 +1,60 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { FiActivity, FiArrowRight } from "react-icons/fi";
+import { useProTheme } from "../../utils/useProTheme";
 
 const HealthScoreCard = () => {
   const { t } = useTranslation("home");
   const navigate = useNavigate();
+  const { isPro } = useProTheme();
+
   const handleClick = () => {
     navigate("/health/score");
   };
 
   return (
     <div
-      className="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow duration-200"
-      onClick={handleClick}
+      onClick={handleClick}      className={`p-4 sm:p-5 rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg ${
+        isPro
+          ? "bg-gradient-to-br from-teal-400 to-teal-600"
+          : "bg-gradient-to-br from-blue-500 to-blue-700"
+      }`}
     >
-      <div className="flex items-center space-x-4">
-        <div className="flex-shrink-0">
-          <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-            <svg
-              className="w-6 h-6 text-blue-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+      <div className="p-6">
+        <div className="flex items-start space-x-3">
+          <FiActivity
+            className={`w-8 h-8 ${isPro ? "text-teal-900" : "text-white"}`}
+          />
+          <div>
+            <h3              className={`text-xl sm:text-2xl font-bold ${
+                isPro ? "text-teal-900" : "text-white"
+              }`}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+              {t("healthScore.title", "Health Score Assessment")}
+            </h3>
+            <p              className={`text-base sm:text-lg mt-2 sm:mt-3 ${
+                isPro ? "text-teal-900" : "text-white/90"
+              }`}
+            >
+              {t(
+                "healthScore.subtitle",
+                "Calculate your health score and get personalized recommendations"
+              )}
+            </p>
+            <div className="mt-4 flex items-center">
+              <span                className={`text-sm font-medium ${
+                  isPro ? "text-teal-900" : "text-white"
+                }`}
+              >
+                {t("healthScore.cta", "Check Your Score")}
+              </span>
+              <FiArrowRight                className={`w-5 h-5 ml-2 ${
+                  isPro ? "text-teal-900" : "text-white"
+                }`}
               />
-            </svg>
+            </div>
           </div>
-        </div>
-        <div>
-          <h3 className="text-lg font-semibold text-gray-900">
-            Health Score Assessment
-          </h3>
-          <p className="text-sm text-gray-600">
-            Calculate your health score and get personalized recommendations
-          </p>
         </div>
       </div>
     </div>
