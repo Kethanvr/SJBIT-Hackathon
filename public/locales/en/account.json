@@ -13,11 +13,28 @@
   "payments": "Payments & Coins",
   "paymentsDesc": "Manage your subscription and payment methods",
   "dataManagement": "Data Management",
-  "dataManagementDesc": "Export, delete, or manage your data",
+  "dataManagementDesc": "Manage your scan and chat history, or delete your data",
   "scanHistory": "Scan History",
-  "scanHistoryDesc": "View your past medication scans",
-  "healthRecords": "Health Records",
-  "healthRecordsDesc": "Access and manage your health records",
+  "scanHistoryDesc": "View and manage your medication scans",
+  "chatHistory": "Chat History",
+  "chatHistoryDesc": "View and manage your chat conversations",
+  "deleteAllData": "Delete All Data",
+  "deleteAllDataDesc": "This will permanently remove your scan and chat history",
+  "delete": "Delete",
+  "allData": "all data",
+  "deleteConfirm": {
+    "title": "Delete All Data?",
+    "message": "Are you sure you want to delete all your data? This action cannot be undone.",
+    "warning": "This action is permanent and cannot be reversed",
+    "confirm": "Yes, Delete All",
+    "cancel": "No, Keep My Data"
+  },
+  "lastScan": "Last scan",
+  "lastChat": "Last chat",
+  "noHistory": "No history yet",
+  "dataDeleted": "Data deleted successfully",
+  "deleteError": "Error deleting data",
+  "confirmDelete": "Please confirm deletion",
   "logout": "Log Out",
   "logoutConfirm": "Are you sure you want to log out?",
   "logoutYes": "Yes, log me out",
@@ -45,8 +62,9 @@
     "generic": "Something went wrong. Please try again.",
     "network": "Network error. Please check your connection.",
     "permission": "You don't have permission to perform this action."
-  },  "chatTitle": "Chat with Doc",
+  },
+  "chatTitle": "Chat with Doc",
   "chatDescription": "click here to start a chat",
-    "myDataSubtitle": " My data",  "settingsSubtitle": "Settings"
-
+  "myDataSubtitle": " My data",
+  "settingsSubtitle": "Settings"
 }

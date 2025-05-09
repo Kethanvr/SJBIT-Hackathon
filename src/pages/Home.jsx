@@ -17,10 +17,8 @@ import ToolTipsGuide from "../components/onboarding/ToolTipsGuide";
 import HomeHeader from "../components/home/HomeHeader";
 import QuickActionsCard from "../components/home/QuickActionsCard";
 import RecommendationsSection from "../components/home/RecommendationsSection";
-import WhatsNewCard from "../components/home/WhatsNewCard";
-import HowToUseCard from "../components/home/HowToUseCard";
+
 import LoggedOutView from "../components/home/LoggedOutView";
-import ToolTipCard from "../components/home/ToolTipCard";
 
 // Import custom hook for logic
 import { useHomePageLogic } from "../hooks/useHomePageLogic";

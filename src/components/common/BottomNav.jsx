@@ -20,8 +20,9 @@ const BottomNav = () => {
   });
   const location = useLocation();
   const { isPro, theme } = useProTheme();
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
   const [visible, setVisible] = useState(true);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   // Don't render until translations are ready
   if (!i18n.isInitialized) {
@@ -32,14 +33,39 @@ const BottomNav = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-      const isVisible = prevScrollPos > currentScrollPos || currentScrollPos < 10;
       
+      // Show nav if:
+      // 1. Scrolling up
+      // 2. At top of page
+      // 3. At bottom of page
+      const isScrollingUp = prevScrollPos > currentScrollPos;
+      const isAtTop = currentScrollPos < 10;
+      const isAtBottom = window.innerHeight + currentScrollPos >= document.documentElement.scrollHeight - 10;
+      
+      const shouldBeVisible = isScrollingUp || isAtTop || isAtBottom;
+      
+      setHasScrolled(true);
       setPrevScrollPos(currentScrollPos);
-      setVisible(isVisible);
+      setVisible(shouldBeVisible);
+    };
+
+    let rafId;
+    const throttledScroll = () => {
+      if (!rafId) {
+        rafId = requestAnimationFrame(() => {
+          handleScroll();
+          rafId = null;
+        });
+      }
     };
     
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', throttledScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', throttledScroll);
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+    };
   }, [prevScrollPos]);
 
   // Check if a path is active (includes partial path matching)
