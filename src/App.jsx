@@ -75,6 +75,31 @@ const SendNotification = lazy(() => import("./pages/admin/SendNotification"));
 const AdminDashboard = lazy(() => import("./pages/admin/Dashboard"));
 const HowToUse = lazy(() => import("./pages/HowToUse"));
 const Doctors = lazy(() => import("./pages/health/Doctors"));
+const MedicineReminder = lazy(() =>
+  import("./pages/health/MedicineReminder").catch((error) => {
+    console.error("Error loading MedicineReminder component:", error);
+    return {
+      default: () => (
+        <div className="flex flex-col items-center justify-center min-h-screen p-8 text-center">
+          <div className="bg-red-100 text-red-700 p-4 rounded-lg mb-4">
+            <p className="font-semibold">
+              Failed to load medicine reminder component
+            </p>
+            <p className="text-sm mt-2">
+              Please try again or contact support if the issue persists.
+            </p>
+          </div>
+          <button
+            onClick={() => window.location.reload()}
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          >
+            Reload
+          </button>
+        </div>
+      ),
+    };
+  })
+);
 
 /**
  * LoadingFallback Component
@@ -307,6 +332,16 @@ const AppContent = () => {
                     <ErrorBoundary>
                       <Suspense fallback={<LoadingSpinner />}>
                         <Doctors />
+                      </Suspense>
+                    </ErrorBoundary>
+                  }
+                />
+                <Route
+                  path="/health/medicine-reminder"
+                  element={
+                    <ErrorBoundary>
+                      <Suspense fallback={<LoadingSpinner />}>
+                        <MedicineReminder />
                       </Suspense>
                     </ErrorBoundary>
                   }

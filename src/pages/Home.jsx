@@ -19,6 +19,7 @@ import QuickActionsCard from "../components/home/QuickActionsCard";
 import RecommendationsSection from "../components/home/RecommendationsSection";
 import HealthInsuranceCard from "../components/home/HealthInsuranceCard";
 import DoctorConsultationCard from "../components/home/DoctorConsultationCard";
+import MedicineReminderCard from "../components/home/MedicineReminderCard";
 
 import LoggedOutView from "../components/home/LoggedOutView";
 import ScrollToTop from "../utils/helpers/ScrollToTop";
@@ -92,6 +93,9 @@ function Home() {
 
                 {/* Doctor Consultation Card */}
                 <DoctorConsultationCard />
+
+                {/* Medicine Reminder Card */}
+                <MedicineReminderCard />
               </div>
             </main>
           </>

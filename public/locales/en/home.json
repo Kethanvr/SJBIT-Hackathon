@@ -73,5 +73,18 @@
   "healthInsurance": {
     "title": "Health Insurance Providers",
     "subtitle": "Find and compare insurance plans"
+  },
+  "medicineReminder": {
+    "title": "Medicine Reminder",
+    "subtitle": "Set reminders for your medications",
+    "medicineName": "Medicine Name",
+    "setReminder": "Set Reminder",
+    "noReminders": "No reminders set",
+    "timeToTake": "Time to take",
+    "fillAllFields": "Please fill in all fields",
+    "notificationsNotSupported": "Notifications are not supported in your browser",
+    "notificationPermissionRequired": "Please allow notifications to set reminders",
+    "reminderSet": "Reminder set successfully!",
+    "reminderDeleted": "Reminder deleted"
   }
 }
