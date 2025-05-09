@@ -1,0 +1,36 @@
+{
+  "title": "Send Feedback",
+  "loading": "Loading form...",
+  "subtitle": "Help us improve MediScan",
+  "feedbackTypePlaceholder": "Select feedback type",
+  "feedbackTypes": {
+    "bugReport": "Bug Report",
+    "featureRequest": "Feature Request",
+    "generalFeedback": "General Feedback",
+    "suggestion": "Suggestion",
+    "complaint": "Complaint",
+    "other": "Other"
+  },
+  "feedbackPlaceholder": "Tell us what you think or report an issue...",
+  "emailLabel": "Your email (optional)",
+  "emailPlaceholder": "We'll only use this to follow up if needed",
+  "attachScreenshot": "Attach Screenshot",
+  "screenshotAttached": "Screenshot attached",
+  "removeScreenshot": "Remove",
+  "sendButton": "Send Feedback",
+  "cancelButton": "Cancel",
+  "anonymousFeedback": "Send anonymously",
+  "deviceInfoIncluded": "Device information will be included",
+  "success": {
+    "title": "Thank You!",
+    "message": "Your feedback has been submitted successfully. We appreciate your input.",
+    "closeButton": "Close"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "message": "We couldn't submit your feedback. Please try again later.",
+    "retryButton": "Try Again"
+  },
+  "maxLength": "{{current}}/{{max}} characters",
+  "requiredField": "This field is required"
+}

@@ -1,0 +1,34 @@
+{
+  "title": "Creator Information",
+  "name": "Kethan V Raju",
+  "role": "Founder & Lead Developer",
+  "bio": "Student at National Institute of Technology Karnataka, passionate about healthcare technology and AI. Created MediScan to make medication information more accessible for everyone.",
+  "education": {
+    "title": "Education",
+    "degree": "B.Tech in Computer Science",
+    "institution": "National Institute of Technology Karnataka",
+    "year": "2021-2025"
+  },
+  "skills": [
+    "Full Stack Development",
+    "Mobile App Development",
+    "AI & Machine Learning",
+    "UI/UX Design",
+    "Cloud Computing",
+    "Healthcare Technology"
+  ],
+  "contributions": [
+    "Conceptualized and architected MediScan",
+    "Developed the medication recognition system",
+    "Implemented the AI-powered chat assistant",
+    "Designed the user interface and experience",
+    "Integrated multilingual support"
+  ],
+  "contact": {
+    "email": "kethanr16@gmail.com",
+    "github": "github.com/kethan1",
+    "linkedin": "linkedin.com/in/kethan-raju",
+    "portfolio": "kethanraju.com"
+  },
+  "message": "Thank you for using MediScan! I hope it helps you better understand and manage your medications. Your feedback is always welcome as we continue to improve the app."
+}

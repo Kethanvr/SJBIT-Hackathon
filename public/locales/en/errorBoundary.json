@@ -1,0 +1,7 @@
+{
+  "error": {
+    "title": "Something went wrong",
+    "defaultMessage": "An unexpected error occurred"
+  },
+  "tryAgainButton": "Try Again"
+}

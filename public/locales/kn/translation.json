@@ -1,0 +1,28 @@
+{
+  "languages": {
+    "en": "ಇಂಗ್ಲಿಷ್",
+    "hi": "ಹಿಂದಿ",
+    "kn": "ಕನ್ನಡ",
+    "ta": "ತಮಿಳು",
+    "te": "ತೆಲುಗು",
+    "ml": "ಮಲಯಾಳಂ",
+    "mr": "ಮರಾಠಿ",
+    "bn": "ಬಂಗಾಳಿ",
+    "gu": "ಗುಜರಾತಿ",
+    "pa": "ಪಂಜಾಬಿ",
+    "or": "ಒಡಿಯಾ",
+    "ur": "ಉರ್ದು",
+    "sa": "ಸಂಸ್ಕೃತ",
+    "ne": "ನೇಪಾಳಿ",
+    "si": "ಸಿಂಹಳ"
+  },
+  "selectLanguage": "ನಿಮ್ಮ ಭಾಷೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿ",
+  "changeLanguage": "ಭಾಷೆ ಬದಲಾಯಿಸಿ",
+  "languageChanged": "ಭಾಷೆ ಬದಲಾಯಿಸಲಾಗಿದೆ",
+  "currentLanguage": "ಪ್ರಸ್ತುತ ಭಾಷೆ: {{language}}",
+  "languageSelection": "ಭಾಷೆಯ ಆಯ್ಕೆ",
+  "languageCode": "kn",
+  "languageName": "ಕನ್ನಡ",
+  "languageNative": "ಕನ್ನಡ",
+  "languageDirection": "ltr"
+}
