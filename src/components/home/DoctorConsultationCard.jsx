@@ -10,57 +10,52 @@ const DoctorConsultationCard = () => {
   const { isPro } = useProTheme();
 
   const handleClick = () => {
-    navigate("/health/doctors");
-  };  return (
+    navigate("/health/doctors");  };  return (
     <div
-      onClick={handleClick}
-      className={`p-4 sm:p-5 rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg flex flex-col min-h-[180px] ${
+      onClick={handleClick}      className={`p-4 sm:p-5 rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg ${
         isPro
           ? "bg-gradient-to-br from-purple-400 to-purple-600"
           : "bg-gradient-to-br from-indigo-500 to-indigo-700"
       }`}
     >
-      <div className="w-full">
-        <div className="flex items-start space-x-2 sm:space-x-3">
-          <FiUser
-            className={`w-6 h-6 sm:w-8 sm:h-8 mt-1 flex-shrink-0 ${isPro ? "text-purple-900" : "text-white"}`}
-          />
-          <h3
-            className={`text-md sm:text-2xl font-bold tracking-tight truncate sm:break-normal ${
-              isPro ? "text-purple-900" : "text-white"
+      <div className="flex items-center justify-between">
+        <div className="flex-1">
+          <div className="flex items-center space-x-3">
+            <FiUser
+              className={`w-8 h-8 ${isPro ? "text-purple-900" : "text-white"}`}
+            />
+            <h3
+              className={`text-xl sm:text-2xl font-bold ${
+                isPro ? "text-purple-900" : "text-white"
+              }`}
+            >
+              {t("doctorConsultation.title", "Doctor Consultation")}
+            </h3>
+          </div>
+          <p            className={`text-base sm:text-lg mt-2 sm:mt-3 ${
+              isPro ? "text-purple-900" : "text-white/90"
             }`}
           >
-            {t("doctorConsultation.title", "Doctor Consultation")}
-          </h3>
+            {t(
+              "doctorConsultation.subtitle",
+              "Book a video consultation with top specialists"
+            )}
+          </p>
+          <div className="mt-4 flex items-center">
+            <span
+              className={`text-sm font-medium ${
+                isPro ? "text-purple-900" : "text-white"
+              }`}
+            >
+              {t("doctorConsultation.cta", "Find Doctors")}
+            </span>
+            <FiArrowRight              className={`w-5 h-5 ml-2 ${
+                isPro ? "text-purple-900" : "text-white"
+              }`}
+            />
+          </div>
         </div>
-        <p
-          className={`text-xs sm:text-lg mt-2 sm:mt-3 line-clamp-2 sm:line-clamp-none ${
-            isPro ? "text-purple-900" : "text-white/90"
-          }`}
-        >
-          {t(
-            "doctorConsultation.subtitle",
-            "Book a video consultation with top specialists"
-          )}
-        </p>
       </div>
-      
-      {/* Book appointment button fixed at bottom */}
-      <div className="mt-auto pt-3 sm:pt-4 flex justify-center w-full border-t border-white/20 mt-3">
-        <div className="flex items-center justify-center py-1">
-          <span
-            className={`text-sm font-medium ${
-              isPro ? "text-purple-900" : "text-white"
-            }`}
-          >
-            {t("doctorConsultation.cta", "Find Doctors")}
-          </span>
-          <FiArrowRight
-            className={`w-4 h-4 sm:w-5 sm:h-5 ml-2 ${
-              isPro ? "text-purple-900" : "text-white"
-            }`}
-          />
-        </div>      </div>
     </div>
   );
 };
