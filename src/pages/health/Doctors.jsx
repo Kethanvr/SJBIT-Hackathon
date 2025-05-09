@@ -15,8 +15,7 @@ import { useProTheme } from "../../utils/useProTheme";
 
 // Dummy data for doctors
 const doctors = [
-  {
-    id: 1,
+  {    id: 1,
     name: "Dr. Sarah Johnson",
     specialization: "Cardiologist",
     experience: "15 years",
@@ -25,8 +24,7 @@ const doctors = [
     image:
       "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
     availability: "Mon-Fri, 9AM-5PM",
-    consultationFee: 150,
-    languages: ["English", "Spanish"],
+    consultationFee: 1500,languages: ["English", "Spanish"],
     education: ["MD - Harvard Medical School", "Fellowship in Cardiology"],
     about:
       "Specialized in preventive cardiology and heart disease management. Experienced in treating complex cardiac conditions.",
@@ -42,8 +40,7 @@ const doctors = [
     image:
       "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
     availability: "Mon-Sat, 10AM-6PM",
-    consultationFee: 180,
-    languages: ["English", "Mandarin"],
+    consultationFee: 1800,    languages: ["English", "Mandarin"],
     education: ["MD - Stanford University", "Neurology Residency"],
     about:
       "Expert in neurological disorders and brain health. Specializes in migraine treatment and neurological rehabilitation.",
@@ -59,8 +56,7 @@ const doctors = [
     image:
       "https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
     availability: "Mon-Fri, 8AM-4PM",
-    consultationFee: 120,
-    languages: ["English", "Spanish"],
+    consultationFee: 1200,    languages: ["English", "Spanish"],
     education: ["MD - Johns Hopkins", "Pediatrics Residency"],
     about:
       "Dedicated to providing comprehensive care for children from birth through adolescence. Specializes in developmental pediatrics.",
@@ -76,8 +72,7 @@ const doctors = [
     image:
       "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
     availability: "Tue-Sat, 9AM-5PM",
-    consultationFee: 160,
-    languages: ["English"],
+    consultationFee: 1600,    languages: ["English"],
     education: ["MD - Yale University", "Dermatology Fellowship"],
     about:
       "Specializes in cosmetic and medical dermatology. Expert in treating skin conditions and performing aesthetic procedures.",
@@ -93,8 +88,7 @@ const doctors = [
     image:
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
     availability: "Mon-Fri, 10AM-7PM",
-    consultationFee: 200,
-    languages: ["English", "Hindi"],
+    consultationFee: 2000,    languages: ["English", "Hindi"],
     education: ["MD - Columbia University", "Psychiatry Residency"],
     about:
       "Specializes in adult psychiatry with focus on anxiety, depression, and mood disorders. Provides both medication management and therapy.",
@@ -110,8 +104,7 @@ const doctors = [
     image:
       "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
     availability: "Mon-Fri, 8AM-4PM",
-    consultationFee: 250,
-    languages: ["English", "Korean"],
+    consultationFee: 2500,    languages: ["English", "Korean"],
     education: ["MD - Mayo Clinic", "Orthopedic Surgery Fellowship"],
     about:
       "Specializes in sports injuries, joint replacements, and minimally invasive orthopedic procedures. Expert in treating complex bone and joint conditions.",
@@ -127,8 +120,7 @@ const doctors = [
     image:
       "https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
     availability: "Mon-Sat, 9AM-5PM",
-    consultationFee: 180,
-    languages: ["English", "Spanish"],
+    consultationFee: 1800,    languages: ["English", "Spanish"],
     education: ["MD - UCLA", "Obstetrics and Gynecology Residency"],
     about:
       "Specializes in women's health, reproductive medicine, and gynecological surgeries. Provides comprehensive care for women of all ages.",
@@ -144,8 +136,7 @@ const doctors = [
     image:
       "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
     availability: "Mon-Fri, 9AM-6PM",
-    consultationFee: 200,
-    languages: ["English"],
+    consultationFee: 2000,    languages: ["English"],
     education: ["MD - Johns Hopkins", "Ophthalmology Fellowship"],
     about:
       "Expert in treating eye diseases, performing cataract surgery, and managing complex eye conditions. Specializes in advanced vision correction procedures.",
@@ -161,8 +152,7 @@ const doctors = [
     image:
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
     availability: "Mon-Fri, 10AM-6PM",
-    consultationFee: 190,
-    languages: ["English", "Hindi"],
+    consultationFee: 1900,    languages: ["English", "Hindi"],
     education: ["MD - Harvard Medical School", "Endocrinology Fellowship"],
     about:
       "Specializes in diabetes management, thyroid disorders, and hormonal imbalances. Expert in treating complex endocrine conditions.",
@@ -178,7 +168,7 @@ const doctors = [
     image:
       "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
     availability: "Mon-Sat, 8AM-4PM",
-    consultationFee: 220,
+    consultationFee: 2200,
     languages: ["English"],
     education: ["MD - Stanford University", "Gastroenterology Fellowship"],
     about:
@@ -187,13 +177,13 @@ const doctors = [
   },
 ];
 
-const Doctors = () => {
-  const { t } = useTranslation("doctors");
+const Doctors = () => {  const { t } = useTranslation("doctors");
   const navigate = useNavigate();
   const { isPro } = useProTheme();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSpecialization, setSelectedSpecialization] = useState("all");
   const [selectedDoctor, setSelectedDoctor] = useState(null);
+  const [confirmBooking, setConfirmBooking] = useState(null);
 
   const specializations = [
     "all",
@@ -208,12 +198,12 @@ const Doctors = () => {
         position: "top-center",
         style: {
           background: "#4CAF50",
-          color: "#fff",
-          borderRadius: "10px",
+          color: "#fff",          borderRadius: "10px",
           padding: "16px",
         },
       }
     );
+    setConfirmBooking(null);
     setSelectedDoctor(null);
   };
 
@@ -297,31 +287,30 @@ const Doctors = () => {
                   ? "bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200"
                   : "bg-white border border-gray-200"
               }`}
-            >
-              <div className="flex items-start space-x-3">
+            >              <div className="flex flex-col sm:flex-row sm:items-start sm:space-x-3">
                 <img
                   src={doctor.image}
                   alt={doctor.name}
-                  className="w-20 h-20 rounded-lg object-cover"
+                  className="w-20 h-20 rounded-lg object-cover mx-auto sm:mx-0 mb-3 sm:mb-0"
                 />
                 <div className="flex-1 min-w-0">
-                  <div className="flex justify-between items-start">
-                    <div className="min-w-0">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start">
+                    <div className="min-w-0 mb-2 sm:mb-0">
                       <h3
-                        className={`text-base font-semibold truncate ${
+                        className={`text-base font-semibold truncate text-center sm:text-left ${
                           isPro ? "text-purple-900" : "text-gray-900"
                         }`}
                       >
                         {doctor.name}
                       </h3>
                       <p
-                        className={`text-sm truncate ${
+                        className={`text-sm truncate text-center sm:text-left ${
                           isPro ? "text-purple-700" : "text-gray-600"
                         }`}
                       >
                         {doctor.specialization}
                       </p>
-                      <div className="mt-1 flex items-center space-x-2">
+                      <div className="mt-1 flex items-center justify-center sm:justify-start space-x-2">
                         <div
                           className={`flex items-center ${
                             isPro ? "text-purple-600" : "text-indigo-600"
@@ -337,19 +326,18 @@ const Doctors = () => {
                           </span>
                         </div>
                       </div>
-                    </div>
-                    <button
+                    </div>                    <button
                       onClick={() => setSelectedDoctor(doctor)}
-                      className={`px-3 py-1.5 rounded-lg text-sm font-medium flex-shrink-0 ${
+                      className={`w-full sm:w-auto px-4 py-2 sm:py-1.5 rounded-lg text-sm font-medium ${
                         isPro
                           ? "bg-purple-500 text-purple-900 hover:bg-purple-600"
                           : "bg-indigo-500 text-white hover:bg-indigo-600"
-                      } transition-colors duration-200`}
+                      } transition-colors duration-200 mt-2 sm:mt-0`}
                     >
                       {t("book", "Book")}
                     </button>
                   </div>
-                  <div className="mt-2 flex flex-wrap gap-1.5">
+                  <div className="mt-3 flex flex-wrap gap-1.5 justify-center sm:justify-start">
                     <span
                       className={`inline-flex items-center px-2 py-1 rounded text-xs font-medium ${
                         isPro
@@ -364,10 +352,9 @@ const Doctors = () => {
                       className={`inline-flex items-center px-2 py-1 rounded text-xs font-medium ${
                         isPro
                           ? "bg-purple-100 text-purple-700"
-                          : "bg-indigo-100 text-indigo-700"
-                      }`}
+                          : "bg-indigo-100 text-indigo-700"                      }`}
                     >
-                      <FiVideo className="w-3 h-3 mr-1" />$
+                      <FiVideo className="w-3 h-3 mr-1" />₹
                       {doctor.consultationFee}
                     </span>
                   </div>
@@ -501,10 +488,9 @@ const Doctors = () => {
                           "Video Consultation via Google Meet"
                         )}
                       </span>
-                    </div>
-                    <div className="flex items-center text-sm text-gray-600">
+                    </div>                    <div className="flex items-center text-sm text-gray-600">
                       <span className="font-medium">
-                        ${selectedDoctor.consultationFee}
+                        ₹{selectedDoctor.consultationFee}
                       </span>
                       <span className="ml-1">
                         {t("perConsultation", "per consultation")}
@@ -514,8 +500,7 @@ const Doctors = () => {
                 </div>
               </div>
 
-              <div className="mt-6 flex justify-end space-x-2">
-                <button
+              <div className="mt-6 flex justify-end space-x-2">                <button
                   onClick={() => setSelectedDoctor(null)}
                   className={`px-3 py-2 rounded-lg text-sm font-medium ${
                     isPro
@@ -526,7 +511,7 @@ const Doctors = () => {
                   {t("close", "Close")}
                 </button>
                 <button
-                  onClick={() => handleBookConsultation(selectedDoctor)}
+                  onClick={() => setConfirmBooking(selectedDoctor)}
                   className={`px-3 py-2 rounded-lg text-sm font-medium ${
                     isPro
                       ? "bg-purple-500 text-purple-900 hover:bg-purple-600"
@@ -536,6 +521,56 @@ const Doctors = () => {
                   {t("bookConsultation", "Book Consultation")}
                 </button>
               </div>
+            </div>          </div>
+        </div>
+      )}
+
+      {/* Booking Confirmation Overlay */}
+      {confirmBooking && (
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50">
+          <div 
+            className={`bg-white rounded-xl w-full max-w-md p-5 shadow-lg ${
+              isPro ? "border-2 border-purple-200" : ""
+            }`}
+          >
+            <div className={`text-center mb-4 ${isPro ? "text-purple-900" : "text-gray-900"}`}>
+              <h3 className="text-xl font-bold mb-2">{t("confirmBooking", "Confirm Booking")}</h3>
+              <p className="text-sm">{t("confirmBookingDesc", "You are about to book a consultation with:")}</p>
+              <p className="text-lg font-semibold mt-2">{confirmBooking.name}</p>
+              <p className="text-sm text-gray-600 mt-1">{confirmBooking.specialization}</p>
+                <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm text-gray-600">{t("consultationFee", "Consultation Fee")}:</span>
+                  <span className="text-base font-medium">₹{confirmBooking.consultationFee}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">{t("availability", "Availability")}:</span>
+                  <span className="text-sm">{confirmBooking.availability}</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex justify-center space-x-3 mt-5">
+              <button
+                onClick={() => setConfirmBooking(null)}
+                className={`px-4 py-2 rounded-lg text-sm font-medium ${
+                  isPro
+                    ? "bg-purple-100 text-purple-700 hover:bg-purple-200"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                } w-1/2`}
+              >
+                {t("cancel", "Cancel")}
+              </button>
+              <button
+                onClick={() => handleBookConsultation(confirmBooking)}
+                className={`px-4 py-2 rounded-lg text-sm font-medium ${
+                  isPro
+                    ? "bg-purple-500 text-purple-900 hover:bg-purple-600"
+                    : "bg-indigo-500 text-white hover:bg-indigo-600"
+                } w-1/2`}
+              >
+                {t("confirm", "Confirm")}
+              </button>
             </div>
           </div>
         </div>
