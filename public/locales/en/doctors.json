@@ -1,0 +1,16 @@
+{
+  "title": "Find a Doctor",
+  "searchPlaceholder": "Search doctors by name or specialization...",
+  "filters": {
+    "all": "All Specialties"
+  },
+  "book": "Book Consultation",
+  "about": "About",
+  "education": "Education",
+  "languages": "Languages",
+  "consultationDetails": "Consultation Details",
+  "videoConsultation": "Video Consultation via Google Meet",
+  "perConsultation": "per consultation",
+  "close": "Close",
+  "bookConsultation": "Book Consultation"
+}

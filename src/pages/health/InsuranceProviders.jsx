@@ -165,7 +165,7 @@ const InsuranceProviders = () => {
     return matchesSearch && matchesFilter && matchesLocal;
   });
   return (
-    <div className="container-narrow pb-4 px-4 md:px-0 mx-auto h-screen overflow-y-auto">
+    <div className="container-narrow pb-4 px-4 md:px-0 mx-auto h-screen overflow-y-auto overscroll-y-contain overscroll-behavior-y-contain">
       <PageHeader
         title={t("title", "Insurance Providers")}
         onBack={() => navigate(-1)}

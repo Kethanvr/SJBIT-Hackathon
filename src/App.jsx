@@ -16,6 +16,7 @@ import { Toaster } from "react-hot-toast";
 import { ROUTES } from "./utils/constants";
 import ErrorBoundary from "./components/ui/ErrorBoundary";
 import ErrorListener from "./components/common/ErrorListener";
+import LoadingSpinner from "./components/common/LoadingSpinner";
 
 // Eagerly loaded components
 import SplashScreen from "./pages/SplashScreen";
@@ -73,6 +74,7 @@ const Updates = lazy(() => import("./pages/Updates"));
 const SendNotification = lazy(() => import("./pages/admin/SendNotification"));
 const AdminDashboard = lazy(() => import("./pages/admin/Dashboard"));
 const HowToUse = lazy(() => import("./pages/HowToUse"));
+const Doctors = lazy(() => import("./pages/health/Doctors"));
 
 /**
  * LoadingFallback Component
@@ -295,6 +297,16 @@ const AppContent = () => {
                     <ErrorBoundary errorKey="insurance-providers">
                       <Suspense fallback={<LoadingFallback />}>
                         <InsuranceProviders />
+                      </Suspense>
+                    </ErrorBoundary>
+                  }
+                />
+                <Route
+                  path="/health/doctors"
+                  element={
+                    <ErrorBoundary>
+                      <Suspense fallback={<LoadingSpinner />}>
+                        <Doctors />
                       </Suspense>
                     </ErrorBoundary>
                   }

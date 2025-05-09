@@ -18,8 +18,10 @@ import HomeHeader from "../components/home/HomeHeader";
 import QuickActionsCard from "../components/home/QuickActionsCard";
 import RecommendationsSection from "../components/home/RecommendationsSection";
 import HealthInsuranceCard from "../components/home/HealthInsuranceCard";
+import DoctorConsultationCard from "../components/home/DoctorConsultationCard";
 
 import LoggedOutView from "../components/home/LoggedOutView";
+import ScrollToTop from "../utils/helpers/ScrollToTop";
 
 // Import custom hook for logic
 import { useHomePageLogic } from "../hooks/useHomePageLogic";
@@ -51,6 +53,7 @@ function Home() {
   if (session) {
     return (
       <div className="relative min-h-screen bg-gray-50">
+        <ScrollToTop />
         {/* Sidebar */}
         <Sidebar
           isOpen={isSidebarOpen}
@@ -73,21 +76,24 @@ function Home() {
             <HomeHeader
               onOpenSidebar={() => setIsSidebarOpen(true)}
               onOpenNotifications={() => setIsNotificationsOpen(true)}
-            />            {/* Main Content */}
-            <div className="h-screen overflow-y-auto pb-4">
-              <div className="p-4">
-                {/* Quick Actions Card - Using the new component */}
+            />
+
+            {/* Main Content */}
+            <main className="flex-1 overflow-y-auto pb-20 overscroll-y-contain overscroll-behavior-y-contain">
+              <div className="p-4 space-y-4">
+                {/* Quick Actions Card */}
                 <QuickActionsCard />
-                
-                {/* Recommendations Section - Using the new component */}
+
+                {/* Recommendations Section */}
                 <RecommendationsSection onStartNewChat={handleNewChat} />
 
                 {/* Health Insurance Card */}
-                <div className="mt-3">
-                  <HealthInsuranceCard />
-                </div>
+                <HealthInsuranceCard />
+
+                {/* Doctor Consultation Card */}
+                <DoctorConsultationCard />
               </div>
-            </div>
+            </main>
           </>
         )}
       </div>
