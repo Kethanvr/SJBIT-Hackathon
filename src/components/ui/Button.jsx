@@ -25,7 +25,7 @@ import LoadingSpinner from "./LoadingSpinner";
  *   Submit
  * </Button>
  */
-const Button = forwardRef(
+export const Button = forwardRef(
   (
     {
       children,
@@ -42,7 +42,8 @@ const Button = forwardRef(
       ...props
     },
     ref
-  ) => {    const { isPro, theme } = useProTheme();
+  ) => {
+    const { isPro, theme } = useProTheme();
 
     // Base styles for all buttons
     const baseStyles =
@@ -61,7 +62,8 @@ const Button = forwardRef(
         "bg-transparent hover:bg-gray-100 focus:ring-gray-500 text-gray-700",
       link: "bg-transparent text-blue-600 hover:underline focus:ring-0 p-0 h-auto",
       // Theme variant (only blue theme now)
-      theme: "bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 disabled:bg-blue-300 shadow-sm",
+      theme:
+        "bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 disabled:bg-blue-300 shadow-sm",
     };
 
     // Size styles with appropriate spacing

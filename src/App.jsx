@@ -25,7 +25,29 @@ import SplashScreen from "./pages/SplashScreen";
 const Auth = lazy(() => import("./pages/auth/Auth"));
 const ResetPassword = lazy(() => import("./pages/auth/ResetPassword"));
 const Callback = lazy(() => import("./pages/auth/Callback"));
-const Home = lazy(() => import("./pages/Home"));
+const Home = lazy(() =>
+  import("./pages/Home").catch((error) => {
+    console.error("Error loading Home component:", error);
+    return {
+      default: () => (
+        <div className="flex flex-col items-center justify-center min-h-screen p-8 text-center">
+          <div className="bg-red-100 text-red-700 p-4 rounded-lg mb-4">
+            <p className="font-semibold">Failed to load home component</p>
+            <p className="text-sm mt-2">
+              Please try again or contact support if the issue persists.
+            </p>
+          </div>
+          <button
+            onClick={() => window.location.reload()}
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          >
+            Reload
+          </button>
+        </div>
+      ),
+    };
+  })
+);
 const Scanner = lazy(() => import("./pages/scan/Scanner"));
 const History = lazy(() => import("./pages/user/History"));
 const ScanHistory = lazy(() => import("./pages/scan/ScanHistory"));
@@ -102,6 +124,52 @@ const MedicineReminder = lazy(() =>
   })
 );
 const HealthScorePage = lazy(() => import("./pages/HealthScorePage"));
+const CommunityPage = lazy(() =>
+  import("./pages/community/CommunityPage").catch((error) => {
+    console.error("Error loading CommunityPage component:", error);
+    return {
+      default: () => (
+        <div className="flex flex-col items-center justify-center min-h-screen p-8 text-center">
+          <div className="bg-red-100 text-red-700 p-4 rounded-lg mb-4">
+            <p className="font-semibold">Failed to load community page</p>
+            <p className="text-sm mt-2">
+              Please try again or contact support if the issue persists.
+            </p>
+          </div>
+          <button
+            onClick={() => window.location.reload()}
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          >
+            Reload
+          </button>
+        </div>
+      ),
+    };
+  })
+);
+const CreatePost = lazy(() =>
+  import("./pages/community/CreatePost").catch((error) => {
+    console.error("Error loading CreatePost component:", error);
+    return {
+      default: () => (
+        <div className="flex flex-col items-center justify-center min-h-screen p-8 text-center">
+          <div className="bg-red-100 text-red-700 p-4 rounded-lg mb-4">
+            <p className="font-semibold">Failed to load create post page</p>
+            <p className="text-sm mt-2">
+              Please try again or contact support if the issue persists.
+            </p>
+          </div>
+          <button
+            onClick={() => window.location.reload()}
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          >
+            Reload
+          </button>
+        </div>
+      ),
+    };
+  })
+);
 
 /**
  * LoadingFallback Component
@@ -389,6 +457,10 @@ const AppContent = () => {
                     </ErrorBoundary>
                   }
                 />
+
+                {/* Community routes */}
+                <Route path="/community" element={<CommunityPage />} />
+                <Route path="/community/create" element={<CreatePost />} />
               </>
             )}
 

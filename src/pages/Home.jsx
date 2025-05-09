@@ -22,6 +22,7 @@ import DoctorConsultationCard from "../components/home/DoctorConsultationCard";
 import MedicineReminderCard from "../components/home/MedicineReminderCard";
 import HealthScoreCard from "../components/home/HealthScoreCard";
 import HealthChallengesCard from "../components/home/HealthChallengesCard";
+import CommunityCard from "../components/home/CommunityCard";
 
 import LoggedOutView from "../components/home/LoggedOutView";
 import ScrollToTop from "../utils/helpers/ScrollToTop";
@@ -95,6 +96,11 @@ function Home() {
 
                 {/* Health Insurance Card */}
                 <HealthInsuranceCard />
+
+                {/* Community Card */}
+                <Suspense fallback={<LoadingSpinner />}>
+                  <CommunityCard />
+                </Suspense>
 
                 {/* Doctor Consultation Card */}
                 <DoctorConsultationCard />

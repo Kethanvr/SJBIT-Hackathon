@@ -5,7 +5,9 @@ This document describes the database model for the MediScan application.
 ## Tables
 
 ### profiles
+
 Stores user profile information
+
 - `id` (UUID, PK) - References auth.users
 - `full_name` (TEXT)
 - `avatar_url` (TEXT)
@@ -15,7 +17,9 @@ Stores user profile information
 - `notifications_enabled` (BOOLEAN)
 
 ### notifications
+
 Stores user notifications
+
 - `id` (UUID, PK)
 - `user_id` (UUID, FK) - References profiles
 - `title` (TEXT)
@@ -26,7 +30,9 @@ Stores user notifications
 - `expires_at` (TIMESTAMPTZ)
 
 ### scan_history
+
 Stores medicine scan history
+
 - `id` (UUID, PK)
 - `user_id` (UUID, FK) - References profiles
 - `image_url` (TEXT)
@@ -36,7 +42,9 @@ Stores medicine scan history
 - `created_at` (TIMESTAMPTZ)
 
 ### chats
+
 Stores chat conversations
+
 - `id` (UUID, PK)
 - `user_id` (UUID, FK) - References profiles
 - `title` (TEXT)
@@ -46,7 +54,9 @@ Stores chat conversations
 - `updated_at` (TIMESTAMPTZ)
 
 ### health_records
+
 Stores user health records
+
 - `id` (UUID, PK)
 - `user_id` (UUID, FK) - References profiles
 - `record_type` (TEXT)
@@ -57,14 +67,18 @@ Stores user health records
 - `updated_at` (TIMESTAMPTZ)
 
 ### admin_users
+
 Stores admin user information
+
 - `id` (UUID, PK) - References profiles
 - `role` (TEXT)
 - `permissions` (JSONB)
 - `created_at` (TIMESTAMPTZ)
 
 ### feedback
+
 Stores user feedback
+
 - `id` (UUID, PK)
 - `user_id` (UUID, FK) - References profiles
 - `type` (TEXT)
@@ -72,15 +86,53 @@ Stores user feedback
 - `rating` (INTEGER) - 1 to 5 rating
 - `created_at` (TIMESTAMPTZ)
 
+### community_posts
+
+Stores user community posts
+
+- `id` (UUID, PK)
+- `user_id` (UUID, FK) - References profiles
+- `title` (TEXT)
+- `description` (TEXT)
+- `image_url` (TEXT) - Cloudinary URL
+- `is_private` (BOOLEAN) - Whether the post is private (anonymous)
+- `likes_count` (INTEGER) - Default 0
+- `created_at` (TIMESTAMPTZ)
+- `updated_at` (TIMESTAMPTZ)
+
+### post_comments
+
+Stores comments on community posts
+
+- `id` (UUID, PK)
+- `post_id` (UUID, FK) - References community_posts
+- `user_id` (UUID, FK) - References profiles
+- `content` (TEXT)
+- `is_private` (BOOLEAN) - Whether the comment is private (anonymous)
+- `created_at` (TIMESTAMPTZ)
+- `updated_at` (TIMESTAMPTZ)
+
+### post_likes
+
+Stores likes on community posts
+
+- `id` (UUID, PK)
+- `post_id` (UUID, FK) - References community_posts
+- `user_id` (UUID, FK) - References profiles
+- `created_at` (TIMESTAMPTZ)
+
 ## Security
 
 ### Row Level Security (RLS)
+
 All tables have Row Level Security enabled with policies that:
+
 - Allow users to read and manage only their own data
 - Restrict admin data access to admin users only
 - Prevent unauthorized access to other users' data
 
 ### Automatic Timestamps
+
 Tables with `updated_at` columns have triggers to automatically update the timestamp when records are modified.
 
 ## Relationships
