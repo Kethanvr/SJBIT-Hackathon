@@ -1,0 +1,41 @@
+{
+  "title": "Updates",
+  "noUpdates": "No updates available",
+  "viewAll": "View All Updates",
+  "newUpdate": "New Update",
+  "latestUpdate": "Latest Update",
+  "recentUpdates": "Recent Updates",
+  "previousUpdates": "Previous Updates",
+  "releaseDate": "Release Date",
+  "version": "Version",
+  "updateTypes": {
+    "feature": "New Feature",
+    "improvement": "Improvement",
+    "bugfix": "Bug Fix",
+    "security": "Security Update",
+    "announcement": "Announcement"
+  },
+  "actions": {
+    "update": "Update Now",
+    "dismiss": "Dismiss",
+    "learnMore": "Learn More",
+    "viewDetails": "View Details"
+  },
+  "updateStatus": {
+    "available": "Update Available",
+    "downloading": "Downloading Update...",
+    "installing": "Installing Update...",
+    "completed": "Update Complete",
+    "failed": "Update Failed",
+    "upToDate": "App is up to date"
+  },
+  "notifications": {
+    "updateAvailable": "A new update is available for MediScan",
+    "updateComplete": "MediScan has been updated to version {{version}}",
+    "whatsNew": "See what's new in this update"
+  },
+  "featuredUpdate": {
+    "title": "MediScan Gold Plan Launched!",
+    "description": "We're excited to announce the MediScan Gold Plan! with Kcoins Enjoy unlimited scans, priority support, and exclusive features with a single subscription. Upgrade now from your account page to experience the best of MediScan."
+  }
+}

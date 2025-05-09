@@ -1,0 +1,55 @@
+{
+  "title": "Updates & Announcements",
+  "subtitle": "Stay informed about the latest developments in MediScan",
+  "filter": {
+    "all": "All Updates",
+    "features": "New Features",
+    "improvements": "Improvements",
+    "bugfixes": "Bug Fixes",
+    "announcements": "Announcements"
+  },
+  "sorting": {
+    "newest": "Newest First",
+    "oldest": "Oldest First"
+  },
+  "noUpdates": {
+    "title": "No Updates Found",
+    "description": "There are no updates to display at this time. Check back soon for new features and improvements."
+  },
+  "updateCard": {
+    "date": "Released on",
+    "readMore": "Read More",
+    "showLess": "Show Less",
+    "affectedComponents": "Affected Components",
+    "relevantLinks": "Relevant Links"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page",
+    "of": "of"
+  },
+  "featured": {
+    "title": "Featured Update",
+    "learnMore": "Learn More",
+    "dismiss": "Dismiss"
+  },
+  "releaseNotes": {
+    "title": "Release Notes",
+    "version": "Version",
+    "releaseDate": "Release Date",
+    "changes": {
+      "added": "Added",
+      "improved": "Improved",
+      "fixed": "Fixed",
+      "removed": "Removed",
+      "security": "Security"
+    }
+  },
+  "goldUpdate": {
+    "title": "MediScan Gold Plan Launched!",
+    "description": "We're excited to announce the MediScan Gold Plan! with Kcoins Enjoy unlimited scans, priority support, and exclusive features with a single subscription. Upgrade now from your account page to experience the best of MediScan.",
+    "learnMore": "Learn About Gold",
+    "upgrade": "Upgrade Now"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "personalInfo": {
+    "updateSuccess": "Profile picture updated successfully!",
+    "updateError": "Error uploading image!",
+    "removeConfirm": "Are you sure you want to remove your profile picture?"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "saved": "Settings saved",
+    "heroTitle": "Stay in the loop",
+    "heroDescription": "Choose what you want to be notified about to personalize your experience",
+    "scanResultsTitle": "Scan Results",
+    "scanResultsDescription": "Get notified when your scan is complete",
+    "updatesTitle": "App Updates",
+    "updatesDescription": "Learn about new features and improvements",
+    "marketingTitle": "Marketing & Promotions",
+    "marketingDescription": "Receive offers and updates from us",
+    "footer": "You can change these settings anytime"
+  },
+  "history": {
+    "title": "History",
+    "goBack": "Go back",
+    "searchPlaceholderScans": "Search scans...",
+    "searchPlaceholderChats": "Search chats...",
+    "searchPlaceholderAll": "Search history...",
+    "tabAll": "All",
+    "tabScans": "Scan History",
+    "tabChats": "Chat History",
+    "noMessages": "No messages",
+    "deleteConfirm": "Are you sure you want to delete this item? This action cannot be undone.",
+    "deleteError": "Failed to delete item",
+    "untitledScan": "Untitled Scan",
+    "untitledChat": "Untitled Chat",
+    "usesPrefix": "Uses: ",
+    "expand": "Click Below to Expand",
+    "viewDetails": "View Details",
+    "continueChat": "Continue Chat",
+    "noItemsTitle": "No items found",
+    "noItemsDescription": "Start using the app to build your history",
+    "newScan": "New Scan",
+    "newChat": "New Chat",
+    "noScansTitle": "No scans found",
+    "noScansDescription": "Start scanning medicines to build your history",
+    "noChatsTitle": "No chats found",
+    "noChatsDescription": "Start chatting with Doc to build your history"
+  },
+  "account": {
+    "title": "Account",
+    "settingsTitle": "Settings",
+    "defaultUser": "User",
+    "viewProfile": "View profile details",
+    "editProfile": "Edit Profile",
+    "chatTitle": "Chat with Doc",
+    "chatDescription": "Get instant medical advice",
+    "settingsSubtitle": "Settings",
+    "security": "Security",
+    "healthManagement": "Health Management",
+    "payments": "Payments",
+    "notifications": "Notifications",
+    "feedback": "Feedback",
+    "shareFeedback": "Share Feedback",
+    "aboutCreators": "About the Creators",
+    "myDataSubtitle": "My Data",
+    "scanHistory": "Scan History",
+    "chatHistory": "Chat History",
+    "deleteAllData": "Delete All Data",
+    "deleteAllConfirm": "Are you sure you want to delete all your data? This action cannot be undone.",
+    "deleteAllSuccess": "All data has been deleted successfully",
+    "deleteAllError": "Failed to delete data",
+    "loggingOut": "Logging out...",
+    "logOut": "Log out"
+  },
+  "accessibility": {
+    "title": "Accessibility",
+    "theme": {
+      "title": "Theme",
+      "description": "Choose between light and dark mode"
+    },
+    "language": {
+      "title": "Language",
+      "description": "Select your preferred language"
+    }
+  }
+}

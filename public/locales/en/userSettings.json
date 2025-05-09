@@ -1,0 +1,156 @@
+{
+  "title": "User Settings",
+  "subtitle": "Customize your MediScan experience",
+  "sections": {
+    "appearance": {
+      "title": "Appearance",
+      "theme": {
+        "title": "Theme",
+        "description": "Choose your preferred display mode",
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System Default"
+      },
+      "textSize": {
+        "title": "Text Size",
+        "description": "Adjust the size of text throughout the app",
+        "small": "Small",
+        "medium": "Medium",
+        "large": "Large",
+        "extraLarge": "Extra Large"
+      },
+      "animations": {
+        "title": "Animations",
+        "description": "Enable or disable animations in the app",
+        "on": "On",
+        "reduced": "Reduced",
+        "off": "Off"
+      }
+    },
+    "privacy": {
+      "title": "Privacy & Security",
+      "scanHistory": {
+        "title": "Scan History",
+        "description": "Control how long scan history is stored",
+        "indefinitely": "Indefinitely",
+        "oneYear": "One Year",
+        "sixMonths": "Six Months",
+        "threeMonths": "Three Months",
+        "oneMonth": "One Month",
+        "disabled": "Don't store history"
+      },
+      "faceId": {
+        "title": "Biometric Authentication",
+        "description": "Use Face ID or Touch ID to secure access to the app",
+        "enabled": "Enabled",
+        "disabled": "Disabled"
+      },
+      "passcode": {
+        "title": "App Passcode",
+        "description": "Set a passcode for added security",
+        "set": "Set Passcode",
+        "change": "Change Passcode",
+        "remove": "Remove Passcode"
+      },
+      "dataSharing": {
+        "title": "Data Sharing",
+        "description": "Choose what data you share with MediScan",
+        "analytics": "Usage Analytics",
+        "errorReports": "Error Reports",
+        "personalizedExp": "Personalized Experience"
+      }
+    },
+    "notifications": {
+      "title": "Notifications",
+      "push": {
+        "title": "Push Notifications",
+        "description": "Receive alerts on your device",
+        "enabled": "Enabled",
+        "disabled": "Disabled"
+      },
+      "email": {
+        "title": "Email Notifications",
+        "description": "Receive updates via email",
+        "enabled": "Enabled",
+        "disabled": "Disabled"
+      },
+      "inApp": {
+        "title": "In-App Notifications",
+        "description": "Receive notifications within the app",
+        "enabled": "Enabled",
+        "disabled": "Disabled"
+      },
+      "types": {
+        "title": "Notification Types",
+        "description": "Choose which notifications you want to receive",
+        "reminders": "Medication Reminders",
+        "updates": "App Updates",
+        "tips": "Health Tips",
+        "scan": "Scan Completion"
+      }
+    },
+    "language": {
+      "title": "Language & Region",
+      "language": {
+        "title": "App Language",
+        "description": "Set your preferred language"
+      },
+      "region": {
+        "title": "Region",
+        "description": "Set your location for relevant content"
+      },
+      "dateFormat": {
+        "title": "Date Format",
+        "description": "Choose how dates are displayed",
+        "mdy": "MM/DD/YYYY",
+        "dmy": "DD/MM/YYYY",
+        "ymd": "YYYY-MM-DD"
+      },
+      "timeFormat": {
+        "title": "Time Format",
+        "description": "Choose how time is displayed",
+        "twelve": "12-hour (AM/PM)",
+        "twentyFour": "24-hour"
+      }
+    },
+    "advanced": {
+      "title": "Advanced Settings",
+      "clearCache": {
+        "title": "Clear Cache",
+        "description": "Free up storage space",
+        "button": "Clear Cache",
+        "confirmation": "Are you sure you want to clear the cache?",
+        "success": "Cache cleared successfully"
+      },
+      "dataUsage": {
+        "title": "Data Usage",
+        "description": "Manage how the app uses mobile data",
+        "saveData": "Data Saver Mode",
+        "highQualityImages": "High Quality Images",
+        "autoDownload": "Auto-download Updates"
+      },
+      "developerMode": {
+        "title": "Developer Mode",
+        "description": "Advanced features for developers",
+        "enabled": "Enabled",
+        "disabled": "Disabled"
+      },
+      "resetApp": {
+        "title": "Reset App",
+        "description": "Reset the app to default settings",
+        "button": "Reset App",
+        "confirmation": "Are you sure you want to reset the app? This will not delete your account or data.",
+        "success": "App reset successfully"
+      }
+    }
+  },
+  "buttons": {
+    "save": "Save Changes",
+    "cancel": "Cancel",
+    "default": "Restore Defaults"
+  },
+  "messages": {
+    "settingsSaved": "Settings saved successfully",
+    "error": "Error saving settings. Please try again."
+  }
+}

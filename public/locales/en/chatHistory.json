@@ -1,0 +1,25 @@
+{
+  "title": "Chat History",
+  "subtitle": "View your previous conversations",
+  "searchPlaceholder": "Search chats...",
+  "noChats": {
+    "title": "No Chats Found",
+    "message": "Start chatting with MediScan AI to build your history",
+    "newChatButton": "Start New Chat"
+  },
+  "chatItem": {
+    "untitledChat": "Untitled Chat",
+    "continueChat": "Continue Chat",
+    "delete": "Delete",
+    "createdAt": "Created at"
+  },
+  "loading": "Loading...",
+  "deleteConfirm": {
+    "title": "Delete Chat?",
+    "message": "Are you sure you want to delete this {{type}}? This action cannot be undone.",
+    "messageWithName": "Are you sure you want to delete \"{{name}}\"? This action cannot be undone.",
+    "confirm": "Yes, Delete",
+    "cancel": "Cancel"
+  },
+  "deleteError": "Failed to delete chat"
+}

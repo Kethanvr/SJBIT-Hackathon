@@ -1,0 +1,40 @@
+{
+  "title": "MediScan",
+  "tagline": "Smart Medicine Scanner",
+  "loading": "Loading...",
+  "preparingApp": "Preparing the app...",
+  "initializing": "Initializing...",
+  "loadingResources": "Loading resources...",
+  "checkingAuth": "Checking authentication...",
+  "settingUpApp": "Setting up your experience...",
+  "almostReady": "Almost ready...",
+  "welcomeBack": "Welcome back!",
+  "welcome": "Welcome to MediScan",
+  "tips": [
+    "Scan any medication to get detailed information",
+    "Store your health records securely in one place",
+    "Ask our AI assistant about medications and health concerns",
+    "Track your medication history with scan history",
+    "Get personalized health insights with our analysis tools"
+  ],
+  "continueButton": "Continue",
+  "error": {
+    "title": "Oops! Something went wrong",
+    "message": "We're having trouble loading the app",
+    "retryButton": "Retry",
+    "contactSupport": "Contact Support"
+  },
+  "version": "Version",
+  "copyright": "© 2025 MediScan. All rights reserved.",
+  "offline": {
+    "title": "No Internet Connection",
+    "message": "Please check your connection and try again",
+    "continueOffline": "Continue Offline"
+  },
+  "update": {
+    "available": "Update Available",
+    "message": "A new version of MediScan is available",
+    "updateButton": "Update Now",
+    "laterButton": "Later"
+  }
+}

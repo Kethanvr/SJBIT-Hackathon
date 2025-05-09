@@ -1,0 +1,52 @@
+{
+  "title": "Account",
+  "personalInfo": "Personal Information",
+  "personalInfoDesc": "Edit your name, email and other personal details",
+  "notifications": "Notifications",
+  "notificationsDesc": "Manage your notification preferences",
+  "accessibility": "Accessibility",
+  "accessibilityDesc": "Adjust the app to your needs with accessibility settings",
+  "language": "Language",
+  "languageDesc": "Change the language of the application",
+  "appSettings": "App Settings",
+  "appSettingsDesc": "Manage app-related settings and preferences",
+  "payments": "Payments & Coins",
+  "paymentsDesc": "Manage your subscription and payment methods",
+  "dataManagement": "Data Management",
+  "dataManagementDesc": "Export, delete, or manage your data",
+  "scanHistory": "Scan History",
+  "scanHistoryDesc": "View your past medication scans",
+  "healthRecords": "Health Records",
+  "healthRecordsDesc": "Access and manage your health records",
+  "logout": "Log Out",
+  "logoutConfirm": "Are you sure you want to log out?",
+  "logoutYes": "Yes, log me out",
+  "logoutNo": "No, stay logged in",
+  "version": "Version",
+  "goldMembership": {
+    "title": "Gold Membership",
+    "desc": "Manage your Gold subscription",
+    "active": "Active",
+    "inactive": "Inactive",
+    "activateTitle": "Activate Gold Membership",
+    "activateDesc": "Enter your code below to activate Gold",
+    "redeemPlaceholder": "Enter activation code",
+    "redeemButton": "Activate Gold"
+  },
+  "deleteAccount": {
+    "button": "Delete Account",
+    "title": "Delete Account?",
+    "warning": "This will permanently delete your account and all associated data.",
+    "confirmText": "Type DELETE to confirm",
+    "confirm": "Delete Permanently",
+    "cancel": "Cancel"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "Network error. Please check your connection.",
+    "permission": "You don't have permission to perform this action."
+  },  "chatTitle": "Chat with Doc",
+  "chatDescription": "click here to start a chat",
+    "myDataSubtitle": " My data",  "settingsSubtitle": "Settings"
+
+}

@@ -1,0 +1,57 @@
+{
+  "title": "ಆರೋಗ್ಯ ದಾಖಲೆಗಳು",
+  "tabs": {
+    "all": "ಎಲ್ಲಾ ದಾಖಲೆಗಳು",
+    "medication": "ಔಷಧಿಗಳು",
+    "condition": "ಪರಿಸ್ಥಿತಿಗಳು",
+    "allergy": "ಅಲರ್ಜಿಗಳು",
+    "procedure": "ಪ್ರಕ್ರಿಯೆಗಳು",
+    "immunization": "ಲಸಿಕರಣಗಳು",
+    "labResult": "ಪ್ರಯೋಗಾಲಯ ಫಲಿತಾಂಶಗಳು",
+    "prescription": "ಔಷಧಿ ಚೀಟಿಗಳು",
+    "note": "ಟಿಪ್ಪಣಿಗಳು",
+    "other": "ಇತರೆ"
+  },
+  "noRecords": {
+    "message": "ಯಾವುದೇ ಆರೋಗ್ಯ ದಾಖಲೆಗಳು ಕಂಡುಬಂದಿಲ್ಲ",
+    "addButton": "ನಿಮ್ಮ ಮೊದಲ ಆರೋಗ್ಯ ದಾಖಲೆಯನ್ನು ಸೇರಿಸಿ"
+  },
+  "uploadModal": {
+    "title": "ಆರೋಗ್ಯ ದಾಖಲೆ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
+    "uploadPrompt": "ನಿಮ್ಮ ಆರೋಗ್ಯ ದಾಖಲೆಯ ಚಿತ್ರವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ",
+    "supportedFormats": "JPG, PNG, HEIC ಬೆಂಬಲಿಸುತ್ತದೆ",
+    "previewAlt": "ದಾಖಲೆ ಮುನ್ನೋಟ",
+    "nameLabel": "ದಾಖಲೆ ಹೆಸರು",
+    "namePlaceholder": "ಉದಾ., ರಕ್ತ ಪರೀಕ್ಷೆ ಫಲಿತಾಂಶಗಳು",
+    "typeLabel": "ದಾಖಲೆ ಪ್ರಕಾರ",
+    "dateLabel": "ದಿನಾಂಕ",
+    "descriptionLabel": "ವಿವರಣೆ",
+    "descriptionPlaceholder": "ಈ ಆರೋಗ್ಯ ದಾಖಲೆಯ ಸಂಕ್ಷಿಪ್ತ ವಿವರಣೆ",
+    "notesLabel": "ಟಿಪ್ಪಣಿಗಳು",
+    "notesPlaceholder": "ಹೆಚ್ಚುವರಿ ಟಿಪ್ಪಣಿಗಳು",
+    "types": {
+      "labResult": "ಪ್ರಯೋಗಾಲಯ ಫಲಿತಾಂಶ",
+      "prescription": "ಔಷಧಿ ಪತ್ರ",
+      "medicalReport": "ವೈದ್ಯಕೀಯ ವರದಿ",
+      "vaccination": "ಲಸಿಕರಣ",
+      "insurance": "ವಿಮಾ ದಾಖಲೆ",
+      "other": "ಇತರೆ"
+    },
+    "cancelButton": "ರದ್ದುಮಾಡಿ",
+    "saveButton": "ದಾಖಲೆಯನ್ನು ಉಳಿಸಿ",
+    "savingButton": "ಉಳಿಸಲಾಗುತ್ತಿದೆ",
+    "uploadingImage": "ಚಿತ್ರ ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ..."
+  },
+  "errors": {
+    "fetchUser": "ಬಳಕೆದಾರ ಮಾಹಿತಿಯನ್ನು ಪಡೆಯುವಲ್ಲಿ ದೋಷ",
+    "fetchRecords": "ಆರೋಗ್ಯ ದಾಖಲೆಗಳನ್ನು ಪಡೆಯುವಲ್ಲಿ ದೋಷ",
+    "deleteRecord": "ದಾಖಲೆ ಅಳಿಸುವಲ್ಲಿ ದೋಷ",
+    "saveRecord": "ದಾಖಲೆ ಉಳಿಸುವಲ್ಲಿ ದೋಷ",
+    "missingInfo": "ದಯವಿಟ್ಟು ಎಲ್ಲಾ ಅಗತ್ಯ ಮಾಹಿತಿಯನ್ನು ಒದಗಿಸಿ"
+  },
+  "alerts": {
+    "deleteConfirm": "ಈ ಆರೋಗ್ಯ ದಾಖಲೆಯನ್ನು ಅಳಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?",
+    "deleteSuccess": "ದಾಖಲೆ ಯಶಸ್ವಿಯಾಗಿ ಅಳಿಸಲಾಗಿದೆ"
+  },
+  "addRecordButtonLabel": "ಹೊಸ ಆರೋಗ್ಯ ದಾಖಲೆಯನ್ನು ಸೇರಿಸಿ"
+}

@@ -1,0 +1,35 @@
+{
+  "title": "Scan Medication",
+  "instruction": "Position the medication package within the frame",
+  "permissionDenied": "Camera access denied. Please enable camera permissions in your browser settings.",
+  "loadingCamera": "Starting camera...",
+  "noCamera": "No camera found. Please make sure your device has a working camera.",
+  "captureButton": "Capture",
+  "retakeButton": "Retake",
+  "usePhotoButton": "Use Photo",
+  "cancelButton": "Cancel",
+  "switchCamera": "Switch Camera",
+  "uploadImage": "Upload Image",
+  "scanningHint": "Center the medication package for best results",
+  "scanningTips": {
+    "title": "Tips for Better Scanning",
+    "tip1": "Ensure good lighting",
+    "tip2": "Hold the package steady",
+    "tip3": "Focus on the medication name and details",
+    "tip4": "Keep the packaging flat if possible"
+  },
+  "flash": {
+    "on": "Flash: On",
+    "off": "Flash: Off",
+    "auto": "Flash: Auto"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "cameraAccess": "Unable to access camera. Please check your device permissions.",
+    "imageProcessing": "Failed to process image. Please try again."
+  },
+  "imageRequirements": "Image must clearly show medication name and details",
+  "processingImage": "Processing your image...",
+  "uploadPrompt": "Choose an image from your device",
+  "maxFileSize": "Maximum file size: 5MB"
+}

@@ -1,0 +1,29 @@
+{
+  "title": "Meet the Creators",
+  "subtitle": "The team behind MediScan",
+  "learnMore": "Learn more",
+  "connect": "Connect",
+  "socialLinks": "Social links",
+  "portfolio": "Portfolio",
+  "contactMe": "Contact me",
+  "roles": {
+    "developer": "Developer",
+    "designer": "Designer",
+    "projectManager": "Project Manager",
+    "founder": "Founder",
+    "aiSpecialist": "AI Specialist",
+    "healthcareAdvisor": "Healthcare Advisor",
+    "fullstack": "Full Stack Developer",
+    "frontend": "Frontend Developer",
+    "backend": "Backend Developer",
+    "uiux": "UI/UX Designer"
+  },
+  "skillsTitle": "Skills & Expertise",
+  "contributionsTitle": "Contributions to MediScan",
+  "otherProjectsTitle": "Other Projects",
+  "experienceTitle": "Experience",
+  "educationTitle": "Education",
+  "contactDetails": "Contact Details",
+  "backToCreators": "Back to Creators",
+  "viewBio": "View Bio"
+}

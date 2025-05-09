@@ -1,0 +1,56 @@
+{
+  "title": "Coming Soon",
+  "subtitle": "We're working on something exciting",
+  "description": "This feature is currently under development and will be available in an upcoming update.",
+  "stayTuned": "Stay tuned for updates!",
+  "notifyMe": "Notify me when available",
+  "backButton": "Go Back",
+  "homeButton": "Back to Home",
+  "pageTitle": "Coming Soon",
+  "listTitle": "Upcoming Features",
+  "feedbackPrompt": "Have suggestions? Let us know what features you'd like to see!",
+  "statusLabel": "Status",
+  "statuses": {
+    "inProgress": "In Progress",
+    "planned": "Planned",
+    "soon": "Coming Soon"
+  },
+  "features": {
+    "healthManagement": {
+      "title": "Health Management",
+      "description": "Track and manage your health records, medications, and more."
+    },
+    "reminders": {
+      "title": "Appointment Reminders",
+      "description": "Get notified about upcoming appointments and medication schedules."
+    },
+    "symptomTracker": {
+      "title": "Symptom Tracker",
+      "description": "Log and monitor your symptoms over time."
+    },
+    "healthTrends": {
+      "title": "Health Trends",
+      "description": "Visualize your health data and trends."
+    },
+    "medicationAlerts": {
+      "title": "Medication Alerts",
+      "description": "Receive alerts for medication refills and doses."
+    },
+    "reportSharing": {
+      "title": "Report Sharing",
+      "description": "Easily share your health reports with doctors or family."
+    }
+  },
+  "progress": {
+    "inDevelopment": "In Development",
+    "testing": "In Testing",
+    "finalizing": "Finalizing",
+    "comingSoon": "Coming Soon",
+    "percentComplete": "% Complete"
+  },
+  "feedback": {
+    "title": "Share Your Thoughts",
+    "description": "What features would you like to see in MediScan? Your feedback helps us prioritize future development.",
+    "submitButton": "Submit Feedback"
+  }
+}

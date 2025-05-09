@@ -1,0 +1,64 @@
+{
+  "title": "Scan Guide",
+  "subtitle": "Tips for better scanning results",
+  "tip1": "Ensure the medication is in a well-lit area for clear recognition",
+  "tip2": "Hold your device steady to avoid blurry images",
+  "tip3": "Position the medication package within the scanning frame",
+  "tip4": "Make sure the medication name and details are clearly visible",
+  "closeButton": "Got It",
+  "steps": [
+    {
+      "title": "Good Lighting",
+      "description": "Ensure the medication is in a well-lit area for clear recognition"
+    },
+    {
+      "title": "Steady Hand",
+      "description": "Hold your device steady to avoid blurry images"
+    },
+    {
+      "title": "Proper Framing",
+      "description": "Position the medication package within the scanning frame"
+    },
+    {
+      "title": "Focus on Text",
+      "description": "Make sure the medication name and details are clearly visible"
+    },
+    {
+      "title": "Avoid Glare",
+      "description": "Adjust your position to reduce glare on packaging"
+    }
+  ],
+  "additionalTips": {
+    "title": "Additional Tips",
+    "contents": [
+      "Flatten curved packaging when possible",
+      "Remove the medication from packaging if the packaging is damaged",
+      "For tablets or capsules, place them on a contrasting background",
+      "Try scanning the barcode if visible on the package",
+      "If scanning fails, try taking a photo and uploading it instead"
+    ]
+  },
+  "troubleshooting": {
+    "title": "Troubleshooting",
+    "badResult": "If you get incorrect results:",
+    "solutions": [
+      "Try scanning from a different angle",
+      "Ensure nothing is obscuring the medication name",
+      "Clean your camera lens if it appears blurry",
+      "Check that you have a stable internet connection",
+      "Try manual search if scanning doesn't work"
+    ]
+  },
+  "bestResults": {
+    "title": "For Best Results",
+    "boxedMedications": "For boxed medications: Scan the front panel with the medication name",
+    "bottleMedications": "For bottled medications: Scan the label with the medication name",
+    "blisterPacks": "For blister packs: Scan the foil side with printed information"
+  },
+  "privacy": {
+    "title": "Privacy Note",
+    "content": "Your medication scans are processed securely. You can delete scan history at any time from your account settings."
+  },
+  "closeButton": "Got It",
+  "dontShowAgain": "Don't show again"
+}

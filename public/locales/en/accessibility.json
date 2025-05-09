@@ -1,0 +1,54 @@
+{
+  "title": "Accessibility",
+  "description": "Adjust the app to your needs with these accessibility settings",
+  "settings": {
+    "highContrast": {
+      "title": "High Contrast Mode",
+      "description": "Increases the contrast of text and UI elements for better visibility"
+    },
+    "largeText": {
+      "title": "Large Text",
+      "description": "Makes text bigger throughout the application"
+    },
+    "reduceMotion": {
+      "title": "Reduce Motion",
+      "description": "Reduces or eliminates animations and transitions"
+    },
+    "screenReader": {
+      "title": "Screen Reader Optimization",
+      "description": "Enhances compatibility with screen readers"
+    }
+  },
+  "language": {
+    "title": "Language Settings",
+    "description": "Change the language of the application",
+    "current": "Current language:"
+  },
+  "theme": {
+    "title": "Theme Settings",
+    "description": "Customize the app's appearance",
+    "light": "Light Mode",
+    "dark": "Dark Mode",
+    "system": "System Default"
+  },
+  "textSize": {
+    "title": "Text Size",
+    "description": "Adjust the size of text throughout the app",
+    "small": "Small",
+    "medium": "Medium",
+    "large": "Large",
+    "extraLarge": "Extra Large"
+  },
+  "soundEffects": {
+    "title": "Sound Effects",
+    "description": "Enable or disable sound feedback"
+  },
+  "hapticFeedback": {
+    "title": "Haptic Feedback",
+    "description": "Enable or disable vibration feedback on actions"
+  },
+  "saveButton": "Save Changes",
+  "resetButton": "Reset to Defaults",
+  "saveSuccess": "Accessibility settings saved successfully",
+  "resetSuccess": "Accessibility settings reset to defaults"
+}

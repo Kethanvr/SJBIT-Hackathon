@@ -1,0 +1,8 @@
+{
+  "navigation": {
+    "home": "Home",
+    "scan": "Scan",
+    "history": "History",
+    "account": "Account"
+  }
+}

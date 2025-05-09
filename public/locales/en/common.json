@@ -1,0 +1,78 @@
+{
+  "buttons": {
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "done": "Done",
+    "retry": "Retry",
+    "continue": "Continue",
+    "refresh": "Refresh",
+    "upload": "Upload",
+    "download": "Download",
+    "confirm": "Confirm"
+  },
+  "status": {
+    "loading": "Loading...",
+    "success": "Success!",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Information",
+    "completed": "Completed",
+    "pending": "Pending",
+    "processing": "Processing...",
+    "uploading": "Uploading...",
+    "downloading": "Downloading..."
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "Network error. Please check your connection.",
+    "serverError": "Server error. Please try again later.",
+    "notFound": "Not found",
+    "unauthorized": "Unauthorized access",
+    "forbidden": "Access forbidden",
+    "validation": "Please check your input and try again.",
+    "required": "This field is required",
+    "invalidFormat": "Invalid format",
+    "fileSize": "File is too large",
+    "fileType": "File type not supported"
+  },
+  "navigation": {
+    "home": "Home",
+    "profile": "Profile",
+    "settings": "Settings",
+    "help": "Help",
+    "about": "About",
+    "contact": "Contact",
+    "logout": "Log Out"
+  },
+  "time": {
+    "now": "Now",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "tomorrow": "Tomorrow",
+    "minutesAgo": "{{count}} minute ago",
+    "minutesAgo_plural": "{{count}} minutes ago",
+    "hoursAgo": "{{count}} hour ago",
+    "hoursAgo_plural": "{{count}} hours ago",
+    "daysAgo": "{{count}} day ago",
+    "daysAgo_plural": "{{count}} days ago",
+    "weeksAgo": "{{count}} week ago",
+    "weeksAgo_plural": "{{count}} weeks ago",
+    "monthsAgo": "{{count}} month ago",
+    "monthsAgo_plural": "{{count}} months ago",
+    "yearsAgo": "{{count}} year ago",
+    "yearsAgo_plural": "{{count}} years ago"
+  },
+  "search": {
+    "placeholder": "Search...",
+    "noResults": "No results found",
+    "searchResults": "Search Results",
+    "clear": "Clear search"
+  }
+}
