@@ -9,13 +9,19 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, 'src'),
     },
-  },
-  server: {
+  },  server: {
     port: 5173,
     host: true,
     strictPort: true,
     watch: {
       usePolling: true,
+    },
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        secure: false,
+      }
     },
   },
   build: {

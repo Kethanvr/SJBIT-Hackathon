@@ -100,6 +100,7 @@ const MedicineReminder = lazy(() =>
     };
   })
 );
+const HealthScorePage = lazy(() => import("./pages/HealthScorePage"));
 
 /**
  * LoadingFallback Component
@@ -303,6 +304,16 @@ const AppContent = () => {
                   element={
                     <ErrorBoundary errorKey="health-records">
                       <HealthRecords />
+                    </ErrorBoundary>
+                  }
+                />
+                <Route
+                  path="/health/score"
+                  element={
+                    <ErrorBoundary errorKey="health-score">
+                      <Suspense fallback={<LoadingFallback />}>
+                        <HealthScorePage />
+                      </Suspense>
                     </ErrorBoundary>
                   }
                 />
