@@ -1,87 +1,42 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { FaTrophy, FaMedal, FaGift } from "react-icons/fa";
+import { FaTrophy } from "react-icons/fa";
+import { FiArrowRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
-const HealthChallengesCard = () => {
-  const { t } = useTranslation("home");
+const HealthChallengesCard = () => {  const { t } = useTranslation("home");
   const navigate = useNavigate();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Daily Steps Challenge",
-      progress: 75,
-      reward: "10% off on next consultation",
-      icon: <FaMedal className="text-yellow-500" />,
-    },
-    {
-      id: 2,
-      title: "Weekly Workout Streak",
-      progress: 60,
-      reward: "15% off on health supplements",
-      icon: <FaTrophy className="text-blue-500" />,
-    },
-    {
-      id: 3,
-      title: "Monthly Health Goals",
-      progress: 90,
-      reward: "20% off on annual health checkup",
-      icon: <FaGift className="text-green-500" />,
-    },
-  ];
-
-  const handleViewAllChallenges = () => {
+  const handleViewChallenges = () => {
     navigate("/challenges");
   };
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-white rounded-lg shadow-md p-6"
+      onClick={handleViewChallenges}
+      className="p-4 sm:p-5 rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg bg-gradient-to-br from-orange-400 to-orange-600"
     >
-      <h2 className="text-xl font-semibold mb-4">
-        Health Challenges & Rewards
-      </h2>
-
-      <div className="space-y-4">
-        {challenges.map((challenge) => (
-          <div key={challenge.id} className="border rounded-lg p-4">
-            <div className="flex items-center justify-between mb-2">
-              <div className="flex items-center space-x-2">
-                {challenge.icon}
-                <h3 className="font-medium">{challenge.title}</h3>
-              </div>
-              <span className="text-sm text-gray-600">
-                {challenge.progress}%
-              </span>
-            </div>
-
-            <div className="w-full bg-gray-200 rounded-full h-2.5">
-              <div
-                className="bg-blue-600 h-2.5 rounded-full transition-all duration-300"
-                style={{ width: `${challenge.progress}%` }}
-              ></div>
-            </div>
-
-            <div className="mt-2 flex items-center justify-between">
-              <span className="text-sm text-gray-600">Reward:</span>
-              <span className="text-sm font-medium text-green-600">
-                {challenge.reward}
-              </span>
-            </div>
+      <div className="flex items-center justify-between">
+        <div className="flex-1">
+          <div className="flex items-center space-x-3">
+            <FaTrophy className="w-8 h-8 text-white" />
+            <h3 className="text-xl sm:text-2xl font-bold text-white">
+              {t("healthChallenges.title", "Health Challenges")}
+            </h3>
           </div>
-        ))}
+          <p className="text-base sm:text-lg mt-2 sm:mt-3 text-white/90">
+            {t("healthChallenges.subtitle", "Complete challenges to earn rewards")}
+          </p>
+          <div className="mt-4 flex items-center">
+            <span className="text-sm font-medium text-white">
+              {t("healthChallenges.cta", "View Challenges")}
+            </span>
+            <FiArrowRight className="w-5 h-5 ml-2 text-white" />
+          </div>
+        </div>
       </div>
-
-      <button
-        onClick={handleViewAllChallenges}
-        className="mt-4 w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
-      >
-        View All Challenges
-      </button>
     </motion.div>
   );
 };

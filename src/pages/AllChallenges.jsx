@@ -9,15 +9,28 @@ import {
   FaCheck,
   FaTimes,
   FaPlus,
+  FaCopy,
 } from "react-icons/fa";
 import ScrollToTop from "../utils/helpers/ScrollToTop";
 import { useProTheme } from "../utils/useProTheme";
+import toast from "react-hot-toast";
 
 const AllChallenges = () => {
   const navigate = useNavigate();
   const { isPro, theme } = useProTheme();
   const [showCompletionOverlay, setShowCompletionOverlay] = useState(false);
   const [completedChallenge, setCompletedChallenge] = useState(null);
+  const [rewardCode, setRewardCode] = useState("");
+
+  // Demo reward codes for each challenge type
+  const demoRewardCodes = {
+    "Daily Steps Challenge": "STEPS2024",
+    "Weekly Workout Streak": "WORKOUT15",
+    "Monthly Health Goals": "HEALTH20",
+    "Water Intake Challenge": "WATER5",
+    "Sleep Schedule Challenge": "SLEEP10",
+  };
+
   const [challenges, setChallenges] = useState([
     {
       id: 1,
@@ -76,13 +89,9 @@ const AllChallenges = () => {
     },
   ]);
 
-  const generateRewardCode = () => {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    let code = "";
-    for (let i = 0; i < 8; i++) {
-      code += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    return code;
+  const handleCopyCode = () => {
+    navigator.clipboard.writeText(rewardCode);
+    toast.success("Reward code copied to clipboard!");
   };
 
   const handleChallengeClick = (challengeId) => {
@@ -91,6 +100,7 @@ const AllChallenges = () => {
         const newCompleted = !challenge.completed;
         if (newCompleted) {
           setCompletedChallenge(challenge);
+          setRewardCode(demoRewardCodes[challenge.title]);
           setShowCompletionOverlay(true);
         }
         return { ...challenge, completed: newCompleted };
@@ -106,11 +116,19 @@ const AllChallenges = () => {
         if (challenge.id === challengeId && !challenge.completed) {
           const newCurrent = Math.min(challenge.current + 1, challenge.target);
           const newProgress = Math.round((newCurrent / challenge.target) * 100);
+          const isCompleted = newProgress === 100;
+
+          if (isCompleted) {
+            setCompletedChallenge(challenge);
+            setRewardCode(demoRewardCodes[challenge.title]);
+            setShowCompletionOverlay(true);
+          }
+
           return {
             ...challenge,
             current: newCurrent,
             progress: newProgress,
-            completed: newProgress === 100,
+            completed: isCompleted,
           };
         }
         return challenge;
@@ -229,7 +247,7 @@ const AllChallenges = () => {
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <FaTrophy className="text-3xl text-green-600" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">Congratulations!</h3>
+                <h3 className="text-xl font-bold mb-2">Congratulations! 🎉</h3>
                 <p className="text-gray-600 mb-4">
                   You've completed the {completedChallenge.title}!
                 </p>
@@ -237,9 +255,17 @@ const AllChallenges = () => {
                   <p className="text-sm text-gray-600 mb-1">
                     Your Reward Code:
                   </p>
-                  <p className="text-lg font-mono font-bold text-green-600">
-                    {generateRewardCode()}
-                  </p>
+                  <div className="flex items-center justify-center space-x-2">
+                    <p className="text-lg font-mono font-bold text-green-600">
+                      {rewardCode}
+                    </p>
+                    <button
+                      onClick={handleCopyCode}
+                      className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-full"
+                    >
+                      <FaCopy />
+                    </button>
+                  </div>
                 </div>
                 <p className="text-sm text-gray-500 mb-4">
                   Use this code to redeem your {completedChallenge.reward}
