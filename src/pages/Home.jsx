@@ -21,6 +21,7 @@ import HealthInsuranceCard from "../components/home/HealthInsuranceCard";
 import DoctorConsultationCard from "../components/home/DoctorConsultationCard";
 import MedicineReminderCard from "../components/home/MedicineReminderCard";
 import HealthScoreCard from "../components/home/HealthScoreCard";
+import HealthChallengesCard from "../components/home/HealthChallengesCard";
 
 import LoggedOutView from "../components/home/LoggedOutView";
 import ScrollToTop from "../utils/helpers/ScrollToTop";
@@ -88,6 +89,9 @@ function Home() {
 
                 {/* Recommendations Section */}
                 <RecommendationsSection onStartNewChat={handleNewChat} />
+
+                {/* Health Challenges & Rewards Card */}
+                <HealthChallengesCard />
 
                 {/* Health Insurance Card */}
                 <HealthInsuranceCard />

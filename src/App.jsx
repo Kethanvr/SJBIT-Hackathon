@@ -29,6 +29,7 @@ const Home = lazy(() => import("./pages/Home"));
 const Scanner = lazy(() => import("./pages/scan/Scanner"));
 const History = lazy(() => import("./pages/user/History"));
 const ScanHistory = lazy(() => import("./pages/scan/ScanHistory"));
+const AllChallenges = lazy(() => import("./pages/AllChallenges"));
 const ScanDetails = lazy(() =>
   import("./pages/scan/ScanHistory").then((module) => ({
     default: module.ScanDetails,
@@ -209,6 +210,14 @@ const AppContent = () => {
                   element={
                     <ErrorBoundary errorKey="home-page">
                       <Home />
+                    </ErrorBoundary>
+                  }
+                />
+                <Route
+                  path="/challenges"
+                  element={
+                    <ErrorBoundary errorKey="all-challenges">
+                      <AllChallenges />
                     </ErrorBoundary>
                   }
                 />
