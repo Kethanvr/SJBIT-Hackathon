@@ -1,0 +1,25 @@
+/* Mobile text size fixes - Preserves Poppins font styling */
+
+/* Base rule to prevent text scaling while preserving font styles */
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Android-specific text size stabilization without affecting font styles */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  * {
+    max-height: 1000000px;
+  }
+}
+
+/* Only prevent automatic text scaling, not affecting other style properties */
+@media screen and (max-width: 768px) {
+  /* This specifically prevents the OS from scaling text while keeping your styles */
+  .preserve-size {
+    /* Add this class to specific elements where size must be exact */
+    font-size: var(--original-size, inherit);
+  }
+}

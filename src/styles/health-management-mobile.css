@@ -1,0 +1,62 @@
+/* Health management mobile optimizations */
+
+/* Improve form controls on mobile */
+@media (max-width: 640px) {
+  /* Make the form container take full width with proper padding */
+  .health-form-container {
+    padding: 1rem;
+    margin-bottom: 4rem;
+  }
+  
+  /* Increase touch target size for form elements */
+  .health-form-container select,
+  .health-form-container input,
+  .health-form-container textarea {
+    padding: 0.625rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  
+  /* Make form labels more visible */
+  .health-form-container label {
+    font-size: 0.9375rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  /* Improve image upload area on mobile */
+  .health-form-container .upload-area {
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Make the image preview responsive */
+  .health-form-container .image-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    margin: 0 auto;
+  }
+  
+  /* Ensure buttons are large enough for touch */
+  .health-form-container .form-buttons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.75rem 1rem;
+    background-color: var(--bg-secondary, white);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .health-form-container .form-buttons button {
+    flex: 1;
+    margin: 0 0.5rem;
+    padding: 0.75rem 1rem;
+  }
+}
