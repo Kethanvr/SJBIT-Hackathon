@@ -1,0 +1,17 @@
+{
+  "header": {
+    "appName": "ಮೆಡಿಲೆನ್ಸ್"
+  },
+  "actions": {
+    "newChat": "ಹೊಸ ಚಾಟ್",
+    "viewFullHistory": "ಪೂರ್ಣ ಇತಿಹಾಸವನ್ನು ವೀಕ್ಷಿಸಿ"
+  },
+  "labels": {
+    "recentChats": "ಇತ್ತೀಚಿನ ಚಾಟ್‌ಗಳು",
+    "noRecentChats": "ಇತ್ತೀಚಿನ ಚಾಟ್‌ಗಳು ಇಲ್ಲ",
+    "shareFeedback": "ಪ್ರತಿಕ್ರಿಯೆ ಹಂಚಿಕೊಳ್ಳಿ"
+  },
+  "chat": {
+    "untitledChat": "ಶೀರ್ಷಿಕೆ ಇಲ್ಲದ ಚಾಟ್"
+  }
+}

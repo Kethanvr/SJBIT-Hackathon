@@ -1,0 +1,35 @@
+{
+  "title": "ಸ್ಕ್ಯಾನ್ ಇತಿಹಾಸ",
+  "noScansMessage": "ಯಾವುದೇ ಸ್ಕ್ಯಾನ್‌ಗಳು ಕಂಡುಬಂದಿಲ್ಲ",
+  "scanAgainButton": "ಮತ್ತೆ ಸ್ಕ್ಯಾನ್ ಮಾಡಿ",
+  "loadingMessage": "ಸ್ಕ್ಯಾನ್ ಇತಿಹಾಸವನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...",
+  "scanDateLabel": "ಸ್ಕ್ಯಾನ್ ದಿನಾಂಕ",
+  "medicationLabel": "ಔಷಧಿ",
+  "viewDetailsButton": "ವಿವರಗಳನ್ನು ವೀಕ್ಷಿಸಿ",
+  "deleteButton": "ಅಳಿಸಿ",
+  "deleteConfirmTitle": "ಸ್ಕ್ಯಾನ್ ಅಳಿಸಿ",
+  "deleteConfirmMessage": "ಈ ಸ್ಕ್ಯಾನ್ ಅನ್ನು ಅಳಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?",
+  "cancelButton": "ರದ್ದುಮಾಡಿ",
+  "confirmButton": "ಅಳಿಸಿ",
+  "errorMessage": "ದೋಷ ಸಂಭವಿಸಿತು. ದಯವಿಟ್ಟು ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "searchPlaceholder": "ಸ್ಕ್ಯಾನ್‌ಗಳಿಗಾಗಿ ಹುಡುಕಿ...",
+  "filterByLabel": "ಇದರ ಮೂಲಕ ಫಿಲ್ಟರ್ ಮಾಡಿ",
+  "filterOptions": {
+    "all": "ಎಲ್ಲವೂ",
+    "thisWeek": "ಈ ವಾರ",
+    "thisMonth": "ಈ ತಿಂಗಳು",
+    "thisYear": "ಈ ವರ್ಷ"
+  },
+  "sortByLabel": "ಇದರ ಮೂಲಕ ವಿಂಗಡಿಸಿ",
+  "sortOptions": {
+    "newest": "ಅತ್ಯಂತ ಹೊಸದು",
+    "oldest": "ಅತ್ಯಂತ ಹಳೆಯದು",
+    "nameAZ": "ಹೆಸರು (A-Z)",
+    "nameZA": "ಹೆಸರು (Z-A)"
+  },
+  "noResultsMessage": "ಫಲಿತಾಂಶಗಳೇನೂ ಕಂಡುಬಂದಿಲ್ಲ. ದಯವಿಟ್ಟು ನಿಮ್ಮ ಹುಡುಕಾಟವನ್ನು ಮರುಹೊಂದಿಸಿ.",
+  "exportButton": "ಇತಿಹಾಸವನ್ನು ರಫ್ತು ಮಾಡಿ",
+  "exportMessage": "ನಿಮ್ಮ ಸ್ಕ್ಯಾನ್ ಇತಿಹಾಸವನ್ನು ರಫ್ತು ಮಾಡಲಾಗುತ್ತಿದೆ...",
+  "exportSuccess": "ಇತಿಹಾಸವನ್ನು ಯಶಸ್ವಿಯಾಗಿ ರಫ್ತು ಮಾಡಲಾಗಿದೆ",
+  "exportError": "ರಫ್ತು ಮಾಡುವಲ್ಲಿ ದೋಷ ಸಂಭವಿಸಿದೆ. ದಯವಿಟ್ಟು ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+}
