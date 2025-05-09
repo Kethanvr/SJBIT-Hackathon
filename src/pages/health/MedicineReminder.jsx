@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { FiClock, FiPlus, FiTrash2, FiBell, FiX, FiImage, FiUpload } from "react-icons/fi";
+import {
+  FiClock,
+  FiPlus,
+  FiTrash2,
+  FiBell,
+  FiX,
+  FiImage,
+  FiUpload,
+} from "react-icons/fi";
 import { toast } from "react-hot-toast";
 import PageHeader from "../../components/layout/PageHeader";
 import { useProTheme } from "../../utils/useProTheme";
@@ -21,7 +29,8 @@ const MedicineReminder = () => {
   const [image, setImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
   const [reminders, setReminders] = useState([]);
-  const [notificationPermission, setNotificationPermission] = useState("default");
+  const [notificationPermission, setNotificationPermission] =
+    useState("default");
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -59,9 +68,9 @@ const MedicineReminder = () => {
 
       if (uploadError) throw uploadError;
 
-      const { data: { publicUrl } } = supabase.storage
-        .from("medicine-images")
-        .getPublicUrl(filePath);
+      const {
+        data: { publicUrl },
+      } = supabase.storage.from("medicine-images").getPublicUrl(filePath);
 
       return publicUrl;
     } catch (error) {
@@ -84,7 +93,12 @@ const MedicineReminder = () => {
 
   const requestNotificationPermission = async () => {
     if (!("Notification" in window)) {
-      toast.error(t("notificationsNotSupported", "Notifications are not supported in your browser"));
+      toast.error(
+        t(
+          "notificationsNotSupported",
+          "Notifications are not supported in your browser"
+        )
+      );
       return false;
     }
 
@@ -119,13 +133,20 @@ const MedicineReminder = () => {
 
     try {
       if (!medicineName.trim() || !reminderTime || !reminderDate) {
-        toast.error(t("fillRequiredFields", "Please fill in all required fields"));
+        toast.error(
+          t("fillRequiredFields", "Please fill in all required fields")
+        );
         return;
       }
 
       const hasPermission = await requestNotificationPermission();
       if (!hasPermission) {
-        toast.error(t("notificationPermissionRequired", "Please allow notifications to set reminders"));
+        toast.error(
+          t(
+            "notificationPermissionRequired",
+            "Please allow notifications to set reminders"
+          )
+        );
         return;
       }
 
@@ -217,21 +238,32 @@ const MedicineReminder = () => {
           {/* Reminders List */}
           <div className="space-y-3">
             {reminders.length === 0 ? (
-              <div className={`text-center py-8 rounded-xl ${
-                isPro ? "bg-emerald-50" : "bg-green-50"
-              }`}>
-                <FiBell className={`w-12 h-12 mx-auto mb-3 ${
-                  isPro ? "text-emerald-500" : "text-green-500"
-                }`} />
-                <p className={`text-base ${
-                  isPro ? "text-emerald-700" : "text-green-700"
-                }`}>
+              <div
+                className={`text-center py-8 rounded-xl ${
+                  isPro ? "bg-emerald-50" : "bg-green-50"
+                }`}
+              >
+                <FiBell
+                  className={`w-12 h-12 mx-auto mb-3 ${
+                    isPro ? "text-emerald-500" : "text-green-500"
+                  }`}
+                />
+                <p
+                  className={`text-base ${
+                    isPro ? "text-emerald-700" : "text-green-700"
+                  }`}
+                >
                   {t("noReminders", "No reminders set")}
                 </p>
-                <p className={`text-sm mt-1 ${
-                  isPro ? "text-emerald-600" : "text-green-600"
-                }`}>
-                  {t("addFirstReminder", "Click the button above to add your first reminder")}
+                <p
+                  className={`text-sm mt-1 ${
+                    isPro ? "text-emerald-600" : "text-green-600"
+                  }`}
+                >
+                  {t(
+                    "addFirstReminder",
+                    "Click the button above to add your first reminder"
+                  )}
                 </p>
               </div>
             ) : (
@@ -255,22 +287,30 @@ const MedicineReminder = () => {
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-3">
-                          <div className={`p-2 rounded-lg ${
-                            isPro ? "bg-emerald-100" : "bg-green-100"
-                          }`}>
-                            <FiClock className={`w-5 h-5 ${
-                              isPro ? "text-emerald-600" : "text-green-600"
-                            }`} />
+                          <div
+                            className={`p-2 rounded-lg ${
+                              isPro ? "bg-emerald-100" : "bg-green-100"
+                            }`}
+                          >
+                            <FiClock
+                              className={`w-5 h-5 ${
+                                isPro ? "text-emerald-600" : "text-green-600"
+                              }`}
+                            />
                           </div>
                           <div>
-                            <h3 className={`font-medium ${
-                              isPro ? "text-emerald-900" : "text-gray-900"
-                            }`}>
+                            <h3
+                              className={`font-medium ${
+                                isPro ? "text-emerald-900" : "text-gray-900"
+                              }`}
+                            >
                               {reminder.medicine_name}
                             </h3>
-                            <p className={`text-sm ${
-                              isPro ? "text-emerald-700" : "text-gray-600"
-                            }`}>
+                            <p
+                              className={`text-sm ${
+                                isPro ? "text-emerald-700" : "text-gray-600"
+                              }`}
+                            >
                               {new Date(reminder.date_time).toLocaleString()}
                             </p>
                           </div>
@@ -287,9 +327,11 @@ const MedicineReminder = () => {
                         </button>
                       </div>
                       {reminder.notes && (
-                        <p className={`mt-2 text-sm ${
-                          isPro ? "text-emerald-700" : "text-gray-600"
-                        }`}>
+                        <p
+                          className={`mt-2 text-sm ${
+                            isPro ? "text-emerald-700" : "text-gray-600"
+                          }`}
+                        >
                           {reminder.notes}
                         </p>
                       )}
@@ -305,14 +347,18 @@ const MedicineReminder = () => {
       {/* Add Reminder Form Overlay */}
       {showForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className={`bg-white rounded-xl w-full max-w-md ${
-            isPro ? "border-2 border-emerald-200" : ""
-          }`}>
+          <div
+            className={`bg-white rounded-xl w-full max-w-md ${
+              isPro ? "border-2 border-emerald-200" : ""
+            }`}
+          >
             <div className="p-4">
               <div className="flex items-center justify-between mb-4">
-                <h3 className={`text-lg font-semibold ${
-                  isPro ? "text-emerald-900" : "text-gray-900"
-                }`}>
+                <h3
+                  className={`text-lg font-semibold ${
+                    isPro ? "text-emerald-900" : "text-gray-900"
+                  }`}
+                >
                   {t("addReminder", "Add Medicine Reminder")}
                 </h3>
                 <button
@@ -330,14 +376,18 @@ const MedicineReminder = () => {
               <form onSubmit={handleSubmit} className="space-y-4">
                 {/* Image Upload */}
                 <div>
-                  <label className={`block text-sm font-medium mb-1 ${
-                    isPro ? "text-emerald-700" : "text-gray-700"
-                  }`}>
+                  <label
+                    className={`block text-sm font-medium mb-1 ${
+                      isPro ? "text-emerald-700" : "text-gray-700"
+                    }`}
+                  >
                     {t("medicineImage", "Medicine Image")}
                   </label>
-                  <div className={`mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed rounded-lg ${
-                    isPro ? "border-emerald-200" : "border-gray-300"
-                  }`}>
+                  <div
+                    className={`mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed rounded-lg ${
+                      isPro ? "border-emerald-200" : "border-gray-300"
+                    }`}
+                  >
                     <div className="space-y-1 text-center">
                       {imagePreview ? (
                         <div className="relative">
@@ -359,9 +409,11 @@ const MedicineReminder = () => {
                         </div>
                       ) : (
                         <>
-                          <FiImage className={`mx-auto h-12 w-12 ${
-                            isPro ? "text-emerald-500" : "text-gray-400"
-                          }`} />
+                          <FiImage
+                            className={`mx-auto h-12 w-12 ${
+                              isPro ? "text-emerald-500" : "text-gray-400"
+                            }`}
+                          />
                           <div className="flex text-sm text-gray-600">
                             <label
                               htmlFor="image-upload"
@@ -381,11 +433,15 @@ const MedicineReminder = () => {
                                 onChange={handleImageChange}
                               />
                             </label>
-                            <p className="pl-1">{t("orDragAndDrop", "or drag and drop")}</p>
+                            <p className="pl-1">
+                              {t("orDragAndDrop", "or drag and drop")}
+                            </p>
                           </div>
-                          <p className={`text-xs ${
-                            isPro ? "text-emerald-500" : "text-gray-500"
-                          }`}>
+                          <p
+                            className={`text-xs ${
+                              isPro ? "text-emerald-500" : "text-gray-500"
+                            }`}
+                          >
                             PNG, JPG, GIF up to 10MB
                           </p>
                         </>
@@ -396,16 +452,21 @@ const MedicineReminder = () => {
 
                 {/* Medicine Name */}
                 <div>
-                  <label className={`block text-sm font-medium mb-1 ${
-                    isPro ? "text-emerald-700" : "text-gray-700"
-                  }`}>
+                  <label
+                    className={`block text-sm font-medium mb-1 ${
+                      isPro ? "text-emerald-700" : "text-gray-700"
+                    }`}
+                  >
                     {t("medicineName", "Medicine Name")} *
                   </label>
                   <input
                     type="text"
                     value={medicineName}
                     onChange={(e) => setMedicineName(e.target.value)}
-                    placeholder={t("medicineNamePlaceholder", "Enter medicine name")}
+                    placeholder={t(
+                      "medicineNamePlaceholder",
+                      "Enter medicine name"
+                    )}
                     className={`w-full px-3 py-2 rounded-lg text-sm ${
                       isPro
                         ? "bg-emerald-50 border-emerald-200 focus:border-emerald-400"
@@ -420,9 +481,11 @@ const MedicineReminder = () => {
                 {/* Date and Time */}
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className={`block text-sm font-medium mb-1 ${
-                      isPro ? "text-emerald-700" : "text-gray-700"
-                    }`}>
+                    <label
+                      className={`block text-sm font-medium mb-1 ${
+                        isPro ? "text-emerald-700" : "text-gray-700"
+                      }`}
+                    >
                       {t("reminderDate", "Date")} *
                     </label>
                     <input
@@ -440,9 +503,11 @@ const MedicineReminder = () => {
                     />
                   </div>
                   <div>
-                    <label className={`block text-sm font-medium mb-1 ${
-                      isPro ? "text-emerald-700" : "text-gray-700"
-                    }`}>
+                    <label
+                      className={`block text-sm font-medium mb-1 ${
+                        isPro ? "text-emerald-700" : "text-gray-700"
+                      }`}
+                    >
                       {t("reminderTime", "Time")} *
                     </label>
                     <input
@@ -463,15 +528,20 @@ const MedicineReminder = () => {
 
                 {/* Notes */}
                 <div>
-                  <label className={`block text-sm font-medium mb-1 ${
-                    isPro ? "text-emerald-700" : "text-gray-700"
-                  }`}>
+                  <label
+                    className={`block text-sm font-medium mb-1 ${
+                      isPro ? "text-emerald-700" : "text-gray-700"
+                    }`}
+                  >
                     {t("notes", "Notes")}
                   </label>
                   <textarea
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
-                    placeholder={t("notesPlaceholder", "Add any additional notes...")}
+                    placeholder={t(
+                      "notesPlaceholder",
+                      "Add any additional notes..."
+                    )}
                     rows="3"
                     className={`w-full px-3 py-2 rounded-lg text-sm ${
                       isPro
@@ -506,7 +576,9 @@ const MedicineReminder = () => {
                     }`}
                     disabled={isLoading}
                   >
-                    {isLoading ? t("saving", "Saving...") : t("setReminder", "Set Reminder")}
+                    {isLoading
+                      ? t("saving", "Saving...")
+                      : t("setReminder", "Set Reminder")}
                   </button>
                 </div>
               </form>
