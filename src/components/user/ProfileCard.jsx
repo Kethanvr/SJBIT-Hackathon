@@ -1,14 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useProTheme } from '../../utils/useProTheme';
 
 /**
  * Component to display user profile information with avatar
  */
 const ProfileCard = ({ profile, user }) => {
   const { t } = useTranslation("account");
-  const { isPro, theme } = useProTheme();
 
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
@@ -31,7 +29,8 @@ const ProfileCard = ({ profile, user }) => {
               {profile?.username ||
                 user?.email?.split("@")[0] ||
                 t("defaultUser")}
-            </h2>            <Link
+            </h2>
+            <Link
               to="/account/personal-info"
               className="text-sm text-gray-500 hover:text-gray-700"
             >
@@ -39,7 +38,8 @@ const ProfileCard = ({ profile, user }) => {
             </Link>
           </div>
         </div>
-      </div>      <Link
+      </div>
+      <Link
         to="/account/personal-info"
         className="block px-4 py-3 bg-gray-50 text-blue-600 hover:bg-gray-100 text-sm font-medium"
       >

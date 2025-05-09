@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "r
 import { useState, useEffect, lazy, Suspense } from "react";
 import { useAuth } from "./hooks/useAuth";
 import AppProvider from "./context/providers/AppProvider";
-import { LanguageProvider } from "./context/LanguageContext";
 import BottomNav from "./components/common/BottomNav";
 import StandardLoadingIndicator from "./components/common/StandardLoadingIndicator";
 import ScrollToTop from "./utils/helpers/ScrollToTop";
@@ -11,9 +10,8 @@ import { Toaster } from 'react-hot-toast';
 import { ROUTES } from "./utils/constants";
 import ErrorBoundary from "./components/ui/ErrorBoundary";
 import ErrorListener from "./components/common/ErrorListener";
-import { preloadProThemeAssets } from "./utils/proThemeCache";
 
-// Eagerly loaded components (critical for initial render)
+// Eagerly loaded components
 import SplashScreen from "./pages/SplashScreen";
 
 // Lazily loaded components to improve initial load performance
@@ -29,7 +27,6 @@ const ChatHistory = lazy(() => import("./pages/chat/ChatHistory"));
 const Account = lazy(() => import("./pages/user/Account"));
 const PersonalInfo = lazy(() => import("./pages/user/PersonalInfo"));
 const Security = lazy(() => import("./pages/auth/Security"));
-const Payments = lazy(() => import("./pages/user/Payments"));
 const Accessibility = lazy(() => import("./pages/Accessibility"));
 const Language = lazy(() => import("./pages/Language"));
 const Notifications = lazy(() => import("./pages/user/Notifications"));
@@ -37,7 +34,6 @@ const ChatBox = lazy(() =>
   import("./pages/chat/ChatBox")
     .catch(error => {
       console.error("Error loading ChatBox component:", error);
-      // Return a placeholder component to prevent the app from crashing
       return {
         default: () => (
           <div className="flex flex-col items-center justify-center min-h-screen p-8 text-center">
@@ -57,7 +53,6 @@ const ChatBox = lazy(() =>
     })
 );
 const AboutCreators = lazy(() => import("./pages/AboutCreators"));
-const ComingSoon = lazy(() => import("./pages/health/ComingSoon"));
 const HealthRecords = lazy(() => import("./pages/health/HealthRecords"));
 const HealthManagement = lazy(() => import("./pages/health/HealthManagement"));
 const Updates = lazy(() => import("./pages/Updates"));
@@ -85,27 +80,17 @@ const LoadingFallback = () => (
 const AppInitializer = () => {
   const [initializing, setInitializing] = useState(true);
   const location = useLocation();
-    
-  // Show splash screen briefly on initial load
+  
   useEffect(() => {
-    // Start preloading Pro theme assets as early as possible but with safety
-    setTimeout(() => {
-      try {
-        preloadProThemeAssets();
-      } catch (error) {
-        console.error('Error preloading theme assets:', error);
-      }
-    }, 200);
-    
-    // If we're not at splash route, initialize right away
+    // Skip splash screen if not on splash route
     if (location.pathname !== ROUTES.SPLASH) {
       setInitializing(false);
       return;
     }
-      // Otherwise show splash screen for a bit
+    
     const timer = setTimeout(() => {
       setInitializing(false);
-    }, 1500); // Use fixed value instead of ANIMATION_DURATIONS.SPLASH_REDIRECT
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
@@ -127,13 +112,15 @@ const AppContent = () => {
   const { user, session, loading } = useAuth();
   const location = useLocation();
 
-  // Determine whether to show the bottom navigation
+  // Hide bottom nav on certain routes
   const hideNavbarPaths = ["/chat", "/chatbox", "/scanner"];
   const shouldShowNavbar = !hideNavbarPaths.some(path => 
     location.pathname.startsWith(path)
   );
-    // Redirect to login if not authenticated
-  if (!loading && !session && location.pathname !== ROUTES.AUTH && 
+
+  // Auth protection
+  if (!loading && !session && 
+      location.pathname !== ROUTES.AUTH && 
       location.pathname !== ROUTES.SPLASH && 
       location.pathname !== ROUTES.HOW_TO_USE && 
       !location.pathname.startsWith("/auth/")) {
@@ -148,16 +135,21 @@ const AppContent = () => {
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <ErrorBoundary errorKey="app-routes">
         <Suspense fallback={<LoadingFallback />}>
-          <Routes>            {/* Public routes - accessible without authentication */}
+          <Routes>
+            {/* Public routes */}
             <Route path={ROUTES.SPLASH} element={<SplashScreen />} />
-            <Route path={ROUTES.AUTH} element={!session ? <Auth /> : <Navigate to={ROUTES.HOME} replace />} />
+            <Route path={ROUTES.AUTH} element={
+              !session ? <Auth /> : <Navigate to={ROUTES.HOME} replace />
+            } />
             <Route path="/auth/callback" element={<Callback />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path={ROUTES.HOW_TO_USE} element={
               <ErrorBoundary errorKey="how-to-use">
                 <HowToUse />
               </ErrorBoundary>
-            } />{/* Protected routes - require authentication */}
+            } />
+
+            {/* Protected routes */}
             {session && (
               <>
                 {/* Main routes */}
@@ -176,9 +168,20 @@ const AppContent = () => {
                     <History />
                   </ErrorBoundary>
                 } />
-                <Route path="/scan/history" element={<ScanHistory />} />
-                <Route path="/scan/:id" element={<ScanDetails />} />
-                  {/* Chat routes */}
+
+                {/* Scan routes */}
+                <Route path="/scan/history" element={
+                  <ErrorBoundary errorKey="scan-history">
+                    <ScanHistory />
+                  </ErrorBoundary>
+                } />
+                <Route path="/scan/:id" element={
+                  <ErrorBoundary errorKey="scan-details">
+                    <ScanDetails />
+                  </ErrorBoundary>
+                } />
+
+                {/* Chat routes */}
                 <Route path={ROUTES.CHAT} element={
                   <ErrorBoundary errorKey="chat">
                     <Suspense fallback={<LoadingFallback />}>
@@ -193,22 +196,25 @@ const AppContent = () => {
                     </Suspense>
                   </ErrorBoundary>
                 } />
-                <Route path="/chat/history" element={<ChatHistory />} />
+                <Route path="/chat/history" element={
+                  <ErrorBoundary errorKey="chat-history">
+                    <ChatHistory />
+                  </ErrorBoundary>
+                } />
                 
-                {/* Account & settings routes */}
+                {/* Account routes */}
                 <Route path={ROUTES.ACCOUNT} element={<Account />} />
                 <Route path="/account/personal-info" element={<PersonalInfo />} />
                 <Route path="/account/security" element={<Security />} />
-                <Route path="/account/payments" element={<Payments />} />
-                <Route path="/account/accessibility" element={<Accessibility />} />                <Route path="/account/language" element={<Language />} />
+                <Route path="/account/accessibility" element={<Accessibility />} />
+                <Route path="/account/language" element={<Language />} />
                 <Route path="/account/notifications" element={<Notifications />} />
               
-                {/* About Creators routes */}
+                {/* About routes */}
                 <Route path="/about-creators" element={<AboutCreators />} />
                 <Route path="/about-creators/:id" element={<AboutCreators />} />
                 
                 {/* Health routes */}
-                <Route path="/health/coming-soon" element={<ComingSoon />} />
                 <Route path="/health/records" element={
                   <ErrorBoundary errorKey="health-records">
                     <HealthRecords />
@@ -220,10 +226,17 @@ const AppContent = () => {
                       <HealthManagement />
                     </Suspense>
                   </ErrorBoundary>
-                } />                  {/* Health Management route */}
-                <Route path={ROUTES.UPDATES} element={<Updates />} />                
+                } />
+
+                {/* App updates */}
+                <Route path={ROUTES.UPDATES} element={<Updates />} />
                 
-                {/* Admin routes - could add additional protection here */}                <Route path="/admin/send-notification" element={<SendNotification />} />
+                {/* Admin routes */}
+                <Route path="/admin/send-notification" element={
+                  <ErrorBoundary errorKey="admin-notification">
+                    <SendNotification />
+                  </ErrorBoundary>
+                } />
                 <Route path="/admin/dashboard" element={
                   <ErrorBoundary errorKey="admin-dashboard">
                     <Suspense fallback={<LoadingFallback />}>
@@ -234,18 +247,22 @@ const AppContent = () => {
               </>
             )}
             
-            {/* Catch all route - redirect to home or login */}
-            <Route path="*" element={<Navigate to={session ? ROUTES.HOME : ROUTES.AUTH} replace />} />
+            {/* Catch all route */}
+            <Route path="*" element={
+              <Navigate to={session ? ROUTES.HOME : ROUTES.AUTH} replace />
+            } />
           </Routes>
         </Suspense>
         
         {/* Bottom Navigation */}
         {session && shouldShowNavbar && <BottomNav />}
-      </ErrorBoundary>        {/* Global toast notifications */}
+      </ErrorBoundary>
+
+      {/* Global toast notifications */}
       <Toaster 
         position="top-center"
         toastOptions={{
-          duration: 3000, // Set a fixed duration instead of using ANIMATION_DURATIONS
+          duration: 3000,
           style: {
             borderRadius: '10px',
             background: '#333',
@@ -254,7 +271,7 @@ const AppContent = () => {
         }}
       />
       
-      {/* Global error listener for standardized error messages */}
+      {/* Global error listener */}
       <ErrorListener position="bottom" autoDismissTime={5000} />
     </div>
   );
@@ -269,12 +286,10 @@ function App() {
   return (
     <ErrorBoundary errorKey="app-root">
       <AppProvider>
-        <LanguageProvider>
-          <Router>
-            <ScrollToTop />
-            <AppInitializer />
-          </Router>
-        </LanguageProvider>
+        <Router>
+          <ScrollToTop />
+          <AppInitializer />
+        </Router>
       </AppProvider>
     </ErrorBoundary>
   );

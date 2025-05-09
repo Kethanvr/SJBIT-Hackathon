@@ -8,16 +8,14 @@ import FeedbackButton from "./ui/FeedbackButton";
 import { formatDate } from "../utils/formatters";
 import Notifications from "./Notifications";
 import { getUnreadNotificationsCount } from "../lib/supabase/notifications";
-import { useProTheme } from "../utils/useProTheme";
 
-export default function Sidebar({ isOpen, onClose, coins = 0, onAddCoin }) {
+export default function Sidebar({ isOpen, onClose }) {
   const [chatHistory, setChatHistory] = useState([]);
   const [user, setUser] = useState(null);
   const [showNotifications, setShowNotifications] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
   const navigate = useNavigate();
   const { t } = useTranslation("sidebar");
-  const { isPro, theme } = useProTheme();
 
   useEffect(() => {
     const fetchUserAndChatHistory = async () => {
@@ -200,7 +198,7 @@ export default function Sidebar({ isOpen, onClose, coins = 0, onAddCoin }) {
           <button
             type="button"
             onClick={handleNewChat}
-            className={`w-full flex items-center justify-center space-x-2 ${theme.button} px-4 py-3 rounded-lg transition`}
+            className={`w-full flex items-center justify-center space-x-2 bg-blue-600 text-white px-4 py-3 rounded-lg transition`}
           >
             <FiPlus className="text-white" />
             <span>{t("actions.newChat")}</span>
@@ -256,9 +254,7 @@ export default function Sidebar({ isOpen, onClose, coins = 0, onAddCoin }) {
               variant="outline"
               size="md"
               label="Share Feedback"
-              className={`w-full justify-center ${
-                isPro ? "text-yellow-700" : "text-blue-600"
-              }`}
+              className={`w-full justify-center`}
             />
           </div>
           <Link

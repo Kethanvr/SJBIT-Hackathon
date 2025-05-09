@@ -1,10 +1,12 @@
 import React from "react";
-import { StrictMode, useEffect } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./i18n"; // Add i18n initialization
+import "./i18n"; // i18n initialization
 import "./index.css";
-import App from "./App.jsx";
-import { preloadProThemeAssets } from "./utils/proThemeCache";
+import App from "./App";
+
+// Initialize error handling for root component
+const appRoot = document.getElementById("root");
 
 // Function to prevent text scaling in mobile webview
 const preventTextScaling = () => {
@@ -25,24 +27,23 @@ const preventTextScaling = () => {
   document.head.appendChild(style);
 };
 
-// Execute on load
-if (typeof window !== "undefined") {
-  window.addEventListener("DOMContentLoaded", () => {
-    preventTextScaling();
+// Register error handler for uncaught errors
+window.addEventListener('error', (event) => {
+  console.error('Global error:', event.error);
+  // Could add error reporting service here
+});
 
-    // We'll preload Pro theme assets after a short delay to ensure
-    // the app has initialized properly
-    setTimeout(() => {
-      try {
-        preloadProThemeAssets();
-      } catch (error) {
-        console.error("Error preloading theme assets:", error);
-      }
-    }, 1000);
-  });
-}
+// Register error handler for unhandled promise rejections 
+window.addEventListener('unhandledrejection', (event) => {
+  console.error('Unhandled rejection:', event.reason);
+  // Could add error reporting service here
+});
 
-createRoot(document.getElementById("root")).render(
+// Execute text scaling prevention on load
+window.addEventListener("DOMContentLoaded", preventTextScaling);
+
+// Create root and render app
+createRoot(appRoot).render(
   <StrictMode>
     <App />
   </StrictMode>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from '../ThemeContext';
 import { LanguageProvider } from '../LanguageContext';
-import { ProUserProvider } from '../ProUserContext';
 import ErrorBoundary from '../../components/ui/ErrorBoundary';
 
 /**
@@ -12,11 +11,9 @@ const AppProvider = ({ children }) => {
   return (
     <ErrorBoundary>
       <ThemeProvider>
-        <ProUserProvider>
-          <LanguageProvider>
-            {children}
-          </LanguageProvider>
-        </ProUserProvider>
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );
