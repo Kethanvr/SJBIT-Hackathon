@@ -9,18 +9,16 @@ import {
   FiX,
   FiImage,
   FiUpload,
+  FiCheck,
 } from "react-icons/fi";
 import { toast } from "react-hot-toast";
 import PageHeader from "../../components/layout/PageHeader";
 import { useProTheme } from "../../utils/useProTheme";
-import { supabase } from "../../utils/supabaseClient";
-import { useAuth } from "../../hooks/useAuth";
 
 const MedicineReminder = () => {
   const { t } = useTranslation("medicineReminder");
   const navigate = useNavigate();
   const { isPro } = useProTheme();
-  const { user } = useAuth();
   const [showForm, setShowForm] = useState(false);
   const [medicineName, setMedicineName] = useState("");
   const [reminderTime, setReminderTime] = useState("");
@@ -29,53 +27,49 @@ const MedicineReminder = () => {
   const [image, setImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
   const [reminders, setReminders] = useState([]);
-  const [notificationPermission, setNotificationPermission] =
-    useState("default");
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     loadReminders();
-    if ("Notification" in window) {
-      setNotificationPermission(Notification.permission);
-    }
+    // Check for due reminders every minute
+    const interval = setInterval(checkDueReminders, 60000);
+    return () => clearInterval(interval);
   }, []);
 
-  const loadReminders = async () => {
+  const loadReminders = () => {
     try {
-      const { data, error } = await supabase
-        .from("medicine_reminders")
-        .select("*")
-        .eq("user_id", user.id)
-        .order("date_time", { ascending: true });
-
-      if (error) throw error;
-      setReminders(data || []);
+      const savedReminders = localStorage.getItem("medicineReminders");
+      if (savedReminders) {
+        setReminders(JSON.parse(savedReminders));
+      }
     } catch (error) {
       console.error("Error loading reminders:", error);
       toast.error(t("errorLoadingReminders", "Error loading reminders"));
     }
   };
 
-  const uploadImage = async (file) => {
+  const saveReminders = (newReminders) => {
     try {
-      const fileExt = file.name.split(".").pop();
-      const fileName = `${Math.random()}.${fileExt}`;
-      const filePath = `${user.id}/${fileName}`;
-
-      const { error: uploadError } = await supabase.storage
-        .from("medicine-images")
-        .upload(filePath, file);
-
-      if (uploadError) throw uploadError;
-
-      const {
-        data: { publicUrl },
-      } = supabase.storage.from("medicine-images").getPublicUrl(filePath);
-
-      return publicUrl;
+      localStorage.setItem("medicineReminders", JSON.stringify(newReminders));
+      setReminders(newReminders);
     } catch (error) {
-      console.error("Error uploading image:", error);
-      throw error;
+      console.error("Error saving reminders:", error);
+      toast.error(t("errorSavingReminders", "Error saving reminders"));
+    }
+  };
+
+  const checkDueReminders = () => {
+    const now = new Date();
+    const dueReminders = reminders.filter((reminder) => {
+      const reminderTime = new Date(reminder.date_time);
+      return !reminder.taken && reminderTime <= now;
+    });
+
+    if (dueReminders.length > 0) {
+      toast(`Time to take ${dueReminders[0].medicine_name}!`, {
+        icon: "💊",
+        duration: 10000,
+      });
     }
   };
 
@@ -91,42 +85,6 @@ const MedicineReminder = () => {
     }
   };
 
-  const requestNotificationPermission = async () => {
-    if (!("Notification" in window)) {
-      toast.error(
-        t(
-          "notificationsNotSupported",
-          "Notifications are not supported in your browser"
-        )
-      );
-      return false;
-    }
-
-    if (Notification.permission === "granted") {
-      return true;
-    }
-
-    const permission = await Notification.requestPermission();
-    setNotificationPermission(permission);
-    return permission === "granted";
-  };
-
-  const scheduleNotification = (reminder) => {
-    const reminderDateTime = new Date(reminder.date_time);
-    const delay = reminderDateTime.getTime() - new Date().getTime();
-
-    if (delay > 0) {
-      setTimeout(() => {
-        if (Notification.permission === "granted") {
-          new Notification("💊 " + t("timeToTake", "Time to take"), {
-            body: `${reminder.medicine_name}!`,
-            icon: reminder.image_url || "/logo192.png",
-          });
-        }
-      }, delay);
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -139,46 +97,23 @@ const MedicineReminder = () => {
         return;
       }
 
-      const hasPermission = await requestNotificationPermission();
-      if (!hasPermission) {
-        toast.error(
-          t(
-            "notificationPermissionRequired",
-            "Please allow notifications to set reminders"
-          )
-        );
-        return;
-      }
-
-      let imageUrl = null;
-      if (image) {
-        imageUrl = await uploadImage(image);
-      }
-
       const dateTime = new Date(`${reminderDate}T${reminderTime}`);
       if (dateTime.getTime() < new Date().getTime()) {
         dateTime.setDate(dateTime.getDate() + 1);
       }
 
-      const { data, error } = await supabase
-        .from("medicine_reminders")
-        .insert([
-          {
-            user_id: user.id,
-            medicine_name: medicineName,
-            notes: notes,
-            image_url: imageUrl,
-            date_time: dateTime.toISOString(),
-            time: reminderTime,
-          },
-        ])
-        .select()
-        .single();
+      const newReminder = {
+        id: Date.now().toString(),
+        medicine_name: medicineName,
+        notes: notes,
+        image_url: imagePreview,
+        date_time: dateTime.toISOString(),
+        time: reminderTime,
+        taken: false,
+      };
 
-      if (error) throw error;
-
-      setReminders([...reminders, data]);
-      scheduleNotification(data);
+      const updatedReminders = [...reminders, newReminder];
+      saveReminders(updatedReminders);
 
       setMedicineName("");
       setReminderTime("");
@@ -196,20 +131,36 @@ const MedicineReminder = () => {
     }
   };
 
-  const deleteReminder = async (id) => {
+  const deleteReminder = (id) => {
     try {
-      const { error } = await supabase
-        .from("medicine_reminders")
-        .delete()
-        .eq("id", id);
-
-      if (error) throw error;
-
-      setReminders(reminders.filter((reminder) => reminder.id !== id));
+      const updatedReminders = reminders.filter(
+        (reminder) => reminder.id !== id
+      );
+      saveReminders(updatedReminders);
       toast.success(t("reminderDeleted", "Reminder deleted"));
     } catch (error) {
       console.error("Error deleting reminder:", error);
       toast.error(t("errorDeletingReminder", "Error deleting reminder"));
+    }
+  };
+
+  const markAsTaken = (id) => {
+    try {
+      const updatedReminders = reminders.map((reminder) => {
+        if (reminder.id === id) {
+          return {
+            ...reminder,
+            taken: true,
+            taken_at: new Date().toISOString(),
+          };
+        }
+        return reminder;
+      });
+      saveReminders(updatedReminders);
+      toast.success(t("reminderMarkedAsTaken", "Medicine marked as taken"));
+    } catch (error) {
+      console.error("Error marking reminder as taken:", error);
+      toast.error(t("errorMarkingAsTaken", "Error marking medicine as taken"));
     }
   };
 
@@ -315,16 +266,30 @@ const MedicineReminder = () => {
                             </p>
                           </div>
                         </div>
-                        <button
-                          onClick={() => deleteReminder(reminder.id)}
-                          className={`p-2 rounded-lg ${
-                            isPro
-                              ? "text-emerald-600 hover:bg-emerald-100"
-                              : "text-gray-600 hover:bg-gray-100"
-                          } transition-colors duration-200`}
-                        >
-                          <FiTrash2 className="w-5 h-5" />
-                        </button>
+                        <div className="flex space-x-2">
+                          {!reminder.taken && (
+                            <button
+                              onClick={() => markAsTaken(reminder.id)}
+                              className={`p-2 rounded-lg ${
+                                isPro
+                                  ? "text-emerald-600 hover:bg-emerald-100"
+                                  : "text-green-600 hover:bg-green-100"
+                              }`}
+                            >
+                              <FiCheck className="w-5 h-5" />
+                            </button>
+                          )}
+                          <button
+                            onClick={() => deleteReminder(reminder.id)}
+                            className={`p-2 rounded-lg ${
+                              isPro
+                                ? "text-emerald-600 hover:bg-emerald-100"
+                                : "text-gray-600 hover:bg-gray-100"
+                            }`}
+                          >
+                            <FiTrash2 className="w-5 h-5" />
+                          </button>
+                        </div>
                       </div>
                       {reminder.notes && (
                         <p
