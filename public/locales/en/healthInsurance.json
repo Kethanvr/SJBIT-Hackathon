@@ -1,0 +1,17 @@
+{
+  "title": "Insurance Providers",
+  "searchPlaceholder": "Search insurance providers...",
+  "filters": {
+    "all": "All Plans",
+    "basic": "Basic",
+    "standard": "Standard",
+    "premium": "Premium",
+    "local": "Local Providers"
+  },
+  "availablePlans": "Available Plans",
+  "coverage": "Coverage",
+  "rating": "Rating",
+  "reviews": "Reviews",
+  "enquire": "Enquire",
+  "local": "Local"
+}

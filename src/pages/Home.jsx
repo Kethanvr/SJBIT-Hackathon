@@ -17,6 +17,7 @@ import ToolTipsGuide from "../components/onboarding/ToolTipsGuide";
 import HomeHeader from "../components/home/HomeHeader";
 import QuickActionsCard from "../components/home/QuickActionsCard";
 import RecommendationsSection from "../components/home/RecommendationsSection";
+import HealthInsuranceCard from "../components/home/HealthInsuranceCard";
 
 import LoggedOutView from "../components/home/LoggedOutView";
 
@@ -61,24 +62,31 @@ function Home() {
           isOpen={showUpdatesOverlay}
           onClose={handleCloseUpdatesOverlay}
         />
-        
+
         <AnimatePresence>
           {showWelcome && <WelcomeScreen onComplete={handleWelcomeComplete} />}
         </AnimatePresence>
-        
+
         {!showWelcome && (
           <>
             {/* Header - Using the new HomeHeader component */}
             <HomeHeader
               onOpenSidebar={() => setIsSidebarOpen(true)}
               onOpenNotifications={() => setIsNotificationsOpen(true)}
-            />
-            {/* Main Content */}
-            <div className="p-4">
-              {/* Quick Actions Card - Using the new component */}
-              <QuickActionsCard />
-              {/* Recommendations Section - Using the new component */}
-              <RecommendationsSection onStartNewChat={handleNewChat} />
+            />            {/* Main Content */}
+            <div className="h-screen overflow-y-auto pb-4">
+              <div className="p-4">
+                {/* Quick Actions Card - Using the new component */}
+                <QuickActionsCard />
+                
+                {/* Recommendations Section - Using the new component */}
+                <RecommendationsSection onStartNewChat={handleNewChat} />
+
+                {/* Health Insurance Card */}
+                <div className="mt-3">
+                  <HealthInsuranceCard />
+                </div>
+              </div>
             </div>
           </>
         )}

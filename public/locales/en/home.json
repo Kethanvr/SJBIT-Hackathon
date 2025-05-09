@@ -49,10 +49,12 @@
     "title": "Coming Soon",
     "description": "New features are on the way!",
     "button": "Stay Tuned"
-  },  "whatsNewCard": {
+  },
+  "whatsNewCard": {
     "title": "Check out What's New!",
     "description": "See the latest features and improvements."
-  },  "howToUseCard": {
+  },
+  "howToUseCard": {
     "title": "How to Use MediScan",
     "description": "Learn how to get the most out of the app"
   },
@@ -67,5 +69,9 @@
   "welcomeTitle": "Welcome to MediLens",
   "welcomeDescription": "Join over 10,000 users who trust MediLens to scan and understand their medicines better.",
   "registerButton": "Register",
-  "loginButton": "Log In"
+  "loginButton": "Log In",
+  "healthInsurance": {
+    "title": "Health Insurance Providers",
+    "subtitle": "Find and compare insurance plans"
+  }
 }
