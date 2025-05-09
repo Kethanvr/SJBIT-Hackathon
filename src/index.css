@@ -1,0 +1,52 @@
+@import './styles/theme.css';
+@import './styles/animations.css';
+@import './styles/mobile-fixes.css';
+@import './styles/health-management-mobile.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Poppins', system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+  }
+}
+
+/* Utility classes */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Spacing helper for bottom navigation */
+.pb-safe {
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+}
+
+/* Container styles */
+.container-narrow {
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Bottom safe area for mobile devices */
+.bottom-safe {
+  bottom: env(safe-area-inset-bottom);
+}
