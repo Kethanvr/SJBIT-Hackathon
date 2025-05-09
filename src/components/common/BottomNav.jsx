@@ -15,11 +15,18 @@ import { cn } from "../../utils/cn";
  * This component highlights the current route and provides quick access to key app features.
  */
 const BottomNav = () => {
-  const { t } = useTranslation("bottomNav");
+  const { t, i18n } = useTranslation("bottomNav", {
+    useSuspense: false // Disable suspense mode to prevent the error
+  });
   const location = useLocation();
   const { isPro, theme } = useProTheme();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+
+  // Don't render until translations are ready
+  if (!i18n.isInitialized) {
+    return null;
+  }
 
   // Handle scroll behavior to show/hide the navigation bar
   useEffect(() => {
@@ -87,7 +94,9 @@ const BottomNav = () => {
             </div>
           </div>
           <span className="text-xs">{t('navigation.scan')}</span>
-        </Link>        {/* History Button */}
+        </Link>
+
+        {/* History Button */}
         <Link
           to={ROUTES.HISTORY}
           className={getNavItemClasses(ROUTES.HISTORY)}
@@ -98,7 +107,8 @@ const BottomNav = () => {
         </Link>
 
         {/* Account Button */}
-        <Link          to={ROUTES.ACCOUNT}
+        <Link
+          to={ROUTES.ACCOUNT}
           className={getNavItemClasses(ROUTES.ACCOUNT)}
           aria-label={t('navigation.account')}
         >
