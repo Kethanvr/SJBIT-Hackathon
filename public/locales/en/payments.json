@@ -1,0 +1,78 @@
+{
+  "title": "Payments & Coins",
+  "subtitle": "Manage your subscription and purchase coins",
+  "balance": {
+    "title": "Current Balance",
+    "coins": "{{count}} coin",
+    "coins_plural": "{{count}} coins",
+    "loading": "Loading..."
+  },
+  "coinPurchase": {
+    "title": "Purchase Coins",
+    "description": "Each scan costs 1 coin. Add coins to your account to scan more medicines or interact with the AI assistant. Gold members get discounted rates.",
+    "warning": "IMPORTANT: Coin purchase feature is currently under development. Please DO NOT make any payments as coins will not be credited to your account. Contact the owner if you require coins.",
+    "packageTitle": "Coin Packages",
+    "buy": "Buy",
+    "processing": "Processing...",
+    "success": "Successfully purchased {{coins}} coins!",
+    "error": "Payment was successful, but we couldn't update your coins. Please contact support."
+  },
+  "referral": {
+    "title": "Redeem a Referral Code",
+    "description": "Enter a valid referral code to get free coins",
+    "placeholder": "Enter referral code",
+    "button": "Redeem",
+    "processing": "Redeeming...",
+    "success": "Success! {{coins}} coins have been added to your account.",
+    "error": "Invalid referral code. Please try again.",
+    "loginRequired": "Please log in to redeem a code."
+  },
+  "goldSubscription": {
+    "title": "Gold Membership",
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "benefits": {
+      "title": "Gold Benefits",
+      "unlimitedScans": "Unlimited Scans",
+      "prioritySupport": "Priority Support",
+      "advancedFeatures": "Advanced Features",
+      "noAds": "Ad-Free Experience",
+      "discountedCoins": "Discounted Coins"
+    },
+    "subscribe": "Upgrade to Gold",
+    "manage": "Manage Subscription",
+    "cancel": "Cancel Subscription"
+  },
+  "transactions": {
+    "title": "Transaction History",
+    "noTransactions": "No transactions yet",
+    "date": "Date",
+    "description": "Description",
+    "amount": "Amount",
+    "status": {
+      "completed": "Completed",
+      "pending": "Pending",
+      "failed": "Failed",
+      "refunded": "Refunded"
+    },
+    "purchaseCoins": "Purchased {{count}} coin",
+    "purchaseCoins_plural": "Purchased {{count}} coins",
+    "referralBonus": "Referral bonus",
+    "goldSubscription": "Gold subscription payment",
+    "receipt": "View Receipt",
+    "download": "Download Receipt"
+  },
+  "paymentMethods": {
+    "title": "Payment Methods",
+    "addNew": "Add Payment Method",
+    "edit": "Edit",
+    "delete": "Delete",
+    "default": "Default",
+    "makeDefault": "Make Default",
+    "card": "Card ending in {{lastFour}}",
+    "expiresOn": "Expires {{month}}/{{year}}",
+    "noPaymentMethods": "No payment methods saved"
+  }
+}

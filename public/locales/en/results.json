@@ -1,0 +1,85 @@
+{
+  "title": "Scan Results",  "loading": "Analyzing your medication...",
+  "error": "Error analyzing medication",
+  "tryAgain": "Try Again",
+  "noResultsFound": "No medication information found",
+  "scanAgain": "Scan Again",
+  "savingResult": "Saving result...",
+  "resultSaved": "Result saved successfully",
+  "untitledScan": "Untitled Scan",
+  "fetchErrorGeneric": "Error loading scan details",
+  "fetchErrorNotFound": "Scan not found or access denied",
+  "deleteError": "Error deleting scan",
+  "sections": {
+    "overview": {
+      "title": "Overview",
+      "medicineName": "Medicine Name",
+      "genericName": "Generic Name",
+      "manufacturer": "Manufacturer",
+      "category": "Category",
+      "form": "Form"
+    },
+    "usage": {
+      "title": "Usage Information",
+      "indications": "Indications",
+      "dosage": "Recommended Dosage",
+      "administration": "Administration",
+      "timing": "When to Take",
+      "duration": "Duration of Treatment"
+    },
+    "warnings": {
+      "title": "Warnings & Precautions",
+      "sideEffects": "Side Effects",
+      "common": "Common",
+      "severe": "Severe",
+      "contraindications": "Contraindications",
+      "warnings": "Warnings",
+      "interactions": "Drug Interactions",
+      "pregnancy": "Pregnancy & Breastfeeding",
+      "storage": "Storage Information"
+    },
+    "ingredients": {
+      "title": "Ingredients",
+      "activeIngredients": "Active Ingredients",
+      "inactiveIngredients": "Inactive Ingredients",
+      "strength": "Strength"
+    },
+    "additional": {
+      "title": "Additional Information",
+      "description": "Description",
+      "prescriptionStatus": "Prescription Status",
+      "expiryDate": "Expiry Date",
+      "batchNumber": "Batch Number",
+      "barcode": "Barcode",
+      "moreInformation": "More Information"
+    }
+  },
+  "actions": {
+    "askAI": "Ask AI about this medication",
+    "share": "Share Results",
+    "save": "Save to Health Records",
+    "export": "Export Results",
+    "print": "Print Results",
+    "viewHistory": "View Past Scans",
+    "scanAnother": "Scan Another"
+  },
+  "disclaimer": {
+    "title": "Medical Disclaimer",
+    "content": "This information is for educational purposes only and is not a substitute for professional medical advice. Always consult with your healthcare provider before taking any medication."
+  },
+  "confidence": {
+    "high": "High Confidence Result",
+    "medium": "Medium Confidence Result",
+    "low": "Low Confidence Result",
+    "info": "Results may not be 100% accurate. Please verify with a healthcare professional."
+  },
+  "notFound": {
+    "title": "Medication Not Found",
+    "message": "We couldn't identify this medication in our database.",
+    "suggestions": "Suggestions:",
+    "tryAgain": "Try scanning again with better lighting",
+    "differentAngle": "Try a different angle or position",
+    "enterManually": "Enter medication details manually",
+    "reportMissing": "Report Missing Medication"
+  }
+}

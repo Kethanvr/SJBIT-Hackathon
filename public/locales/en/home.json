@@ -1,0 +1,71 @@
+{
+  "headerTitle": "MediScan",
+  "sidebarToggle": "Toggle sidebar",
+  "notificationsToggle": "Toggle notifications",
+  "quickActions": {
+    "title": "Quick Actions",
+    "scan": "Scan Medicine",
+    "history": "View History"
+  },
+  "recommendations": {
+    "title": "Recommendations",
+    "record": {
+      "title": "Health Record",
+      "description": "Access your complete medical history",
+      "button": "View Record"
+    },
+    "chat": {
+      "title": "Chat with Doc",
+      "description": "Get instant answers about your health concerns",
+      "button": "Start Chat"
+    },
+    "about": {
+      "title": "About Creators",
+      "description": "Learn about the team behind MediScan",
+      "button": "View Details"
+    },
+    "comingSoon": {
+      "title": "Coming Soon",
+      "description": "Explore upcoming features like health trends and medication alerts.",
+      "button": "Stay Tuned"
+    }
+  },
+  "chatCard": {
+    "title": "Chat with Doc",
+    "description": "Get instant answers about your health concerns",
+    "button": "Start Chat"
+  },
+  "healthRecordCard": {
+    "title": "Health Record",
+    "description": "Access your complete medical history",
+    "button": "View Record"
+  },
+  "comingSoonCard": {
+    "title": "Coming Soon",
+    "description": "New features are on the way!",
+    "button": "Click to know More"
+  },
+  "stayTunedCard": {
+    "title": "Coming Soon",
+    "description": "New features are on the way!",
+    "button": "Stay Tuned"
+  },  "whatsNewCard": {
+    "title": "Check out What's New!",
+    "description": "See the latest features and improvements."
+  },  "howToUseCard": {
+    "title": "How to Use MediScan",
+    "description": "Learn how to get the most out of the app"
+  },
+  "getStartedButton": "Get Started with MediScan",
+  "loggedOut": {
+    "appName": "MediScan",
+    "welcomeTitle": "Welcome to MediScan",
+    "welcomeMessage": "Join over 10,000 users who trust MediScan to scan and understand their medicines better.",
+    "registerButton": "Register",
+    "loginButton": "Log In"
+  },
+  "welcomeTitle": "Welcome to MediLens",
+  "welcomeDescription": "Join over 10,000 users who trust MediLens to scan and understand their medicines better.",
+  "registerButton": "Register",
+  "loginButton": "Log In"
+}

@@ -1,0 +1,59 @@
+{
+  "menu": "Menu",
+  "close": "Close sidebar",  "actions": {
+    "viewFullHistory": "View Full History",
+    "newChat": "New Chat"
+  },
+  "addCoin": "Add Coin",
+  "sections": {
+    "main": "Main",
+    "medical": "Medical",
+    "account": "Account",
+    "help": "Help & Support"
+  },
+  "items": {
+    "home": "Home",
+    "scanner": "Medicine Scanner",
+    "scanHistory": "Scan History",
+    "chat": "Health Assistant",
+    "chatHistory": "Chat History",
+    "healthRecords": "Health Records",
+    "healthTrends": "Health Trends",
+    "healthManagement": "Health Management",
+    "account": "My Account",
+    "settings": "Settings",
+    "userSettings": "User Settings",
+    "personalInfo": "Personal Information",
+    "notifications": "Notifications",
+    "payments": "Payments & Coins",
+    "language": "Language",
+    "help": "Help & Support",
+    "howToUse": "How to Use",
+    "contactSupport": "Contact Support",
+    "feedback": "Send Feedback",
+    "aboutUs": "About Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "footer": {
+    "version": "Version",
+    "logOut": "Log Out",
+    "logIn": "Log In",
+    "signUp": "Sign Up"
+  },
+  "goldStatus": {
+    "active": "Gold Member",
+    "upgrade": "Upgrade to Gold",
+    "benefits": "View Benefits"
+  },  "newLabel": "NEW",
+  "comingSoonLabel": "COMING SOON",
+  "updatesAvailable": "Updates Available",
+  "betaFeature": "BETA",
+  "labels": {
+    "recentChats": "Recent Chats",
+    "noRecentChats": "No recent chats"
+  },
+  "chat": {
+    "untitledChat": "Untitled Chat"
+  }
+}

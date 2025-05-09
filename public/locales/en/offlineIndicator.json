@@ -1,0 +1,28 @@
+{
+  "offline": {
+    "title": "You are offline",
+    "retry": "Retry Connection"
+  },
+  "online": {
+    "title": "Back online"
+  },
+  "reconnecting": "Reconnecting...",
+  "limitedFunctionality": "Limited functionality available in offline mode",
+  "offlineMode": "Offline Mode",
+  "cachedData": "Using cached data",
+  "savedScans": "Your saved scans are still available",
+  "pendingActions": "Some actions will be completed when you're back online",
+  "goOnline": "Check your internet connection to restore full functionality",
+  "syncStatus": {
+    "pending": "{{count}} item waiting to sync",
+    "pending_plural": "{{count}} items waiting to sync",
+    "syncing": "Syncing data...",
+    "complete": "All data synchronized",
+    "failed": "Sync failed. Will retry later."
+  },
+  "warnings": {
+    "scanUnavailable": "Scanning not available in offline mode",
+    "searchLimited": "Search results may be limited in offline mode",
+    "aiUnavailable": "AI features unavailable in offline mode"
+  }
+}

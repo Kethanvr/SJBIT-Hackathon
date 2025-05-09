@@ -1,0 +1,125 @@
+{
+  "title": "Health Management",
+  "subtitle": "Track and manage your health information",
+  "addRecord": "Add Health Record",
+  "editRecord": "Health Record Details",
+  "loading": "Loading health record...",
+  "saveSuccess": "Health record saved successfully!",
+  "updateSuccess": "Health record updated successfully!",
+  "deleteSuccess": "Health record deleted successfully!",
+  "errors": {
+    "saveFailed": "Failed to save record. Please try again.",
+    "updateFailed": "Failed to update record. Please try again.",
+    "fetchFailed": "Could not load record. Please try again.",
+    "uploadFailed": "Failed to upload image."
+  },
+  "form": {
+    "recordType": "Record Type",
+    "recordTypeOptions": {
+      "medication": "Medication",
+      "allergy": "Allergy",
+      "vaccination": "Vaccination",
+      "procedure": "Procedure",
+      "immunization": "Immunization",
+      "labResult": "Lab Result",
+      "insurance": "Insurance Document",
+      "other": "Other"
+    },
+    "name": "Name",
+    "namePlaceholder": "Name of record",
+    "date": "Date",
+    "description": "Description",
+    "descriptionPlaceholder": "Brief description",
+    "dosage": "Dosage",
+    "dosagePlaceholder": "e.g., 50mg",
+    "frequency": "Frequency",
+    "frequencyPlaceholder": "e.g., Twice daily",
+    "notes": "Additional Notes",
+    "notesPlaceholder": "Any other relevant information",
+    "uploadImage": "Upload Image (optional)",
+    "changeImage": "Change Image",
+    "removeImage": "Remove image",
+    "uploadInstructions": {
+      "uploadLink": "Upload a file",
+      "dragDrop": "or drag and drop",
+      "formats": "PNG, JPG, PDF, HEIC up to 10MB"
+    }
+  },
+  "buttons": {
+    "save": "Save Record",
+    "update": "Update Record",
+    "cancel": "Cancel",
+    "share": "Share",
+    "download": "Download PDF"
+  },
+  "share": {
+    "title": "Share Health Record",
+    "recordType": "Type",
+    "recordDate": "Date",
+    "description": "Description",
+    "copySuccess": "Health record details copied to clipboard!",
+    "shareError": "Failed to share health record. Please try again."
+  },
+  "download": {
+    "error": "Failed to generate PDF. Please try again.",
+    "processing": "Generating PDF..."
+  },
+  "ariaLabels": {
+    "downloadPDF": "Download PDF",
+    "share": "Share record"
+  },
+  "sections": {
+    "overview": {
+      "title": "Overview",
+      "noData": "No health data available yet",
+      "startTracking": "Start tracking your health data"
+    },
+    "medications": {
+      "title": "Medications",
+      "active": "Active Medications",
+      "history": "Medication History",
+      "addNew": "Add Medication",
+      "noMedications": "No medications added yet",
+      "search": "Search medications",
+      "track": "Track a medication"
+    },
+    "vitals": {
+      "title": "Vital Signs",
+      "track": "Track Vitals",
+      "latest": "Latest Readings",
+      "history": "Vitals History",
+      "noVitals": "No vital signs recorded yet",
+      "addNew": "Add Vital Reading"
+    },
+    "appointments": {
+      "title": "Appointments",
+      "upcoming": "Upcoming Appointments",
+      "past": "Past Appointments",
+      "schedule": "Schedule Appointment",
+      "noAppointments": "No appointments scheduled",
+      "addNew": "Add Appointment"
+    },
+    "allergies": {
+      "title": "Allergies & Conditions",
+      "allergies": "Allergies",
+      "conditions": "Medical Conditions",
+      "noAllergies": "No allergies recorded",
+      "noConditions": "No conditions recorded",
+      "addNew": "Add Allergy/Condition"
+    }
+  },
+  "alerts": {
+    "medicationDue": "Medication reminder: Time to take {{medication}}",
+    "appointmentSoon": "Upcoming appointment: {{appointment}} in {{time}}",
+    "refillNeeded": "Refill reminder: {{medication}} is running low"
+  },
+  "healthScore": {
+    "title": "Health Score",
+    "excellent": "Excellent",
+    "good": "Good",
+    "fair": "Fair",
+    "needsAttention": "Needs Attention",
+    "lastUpdated": "Last updated: {{date}}"
+  },
+  "comingSoon": "Enhanced health management features coming soon!"
+}

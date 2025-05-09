@@ -1,0 +1,40 @@
+{
+  "title": "Language Settings",
+  "description": "Choose your preferred language for the application",
+  "currentLanguage": "Current language",
+  "selectLanguage": "Select a language",
+  "saveButton": "Save",
+  "cancelButton": "Cancel",
+  "languageChanged": "Language changed successfully",
+  "availableLanguages": "Available languages",
+  "comingSoonTitle": "More Languages Coming Soon",
+  "comingSoonDescription": "We're working on adding more languages to make MediScan accessible to more users around the world.",
+  "upcomingLanguages": "Upcoming languages include:",
+  "helpTranslate": "If you'd like to help translate MediScan into your language, please contact us.",
+  "autoDetect": "Auto detect (based on device)",
+  "regionalSettings": "Regional Settings",
+  "dateFormat": "Date format",
+  "timeFormat": "Time format",
+  "measurementSystem": "Measurement system",
+  "dateFormats": {
+    "mdy": "MM/DD/YYYY",
+    "dmy": "DD/MM/YYYY",
+    "ymd": "YYYY-MM-DD"
+  },
+  "timeFormats": {
+    "12h": "12-hour (AM/PM)",
+    "24h": "24-hour"
+  },
+  "measurementSystems": {
+    "metric": "Metric",
+    "imperial": "Imperial"
+  },
+  "languageOptions": {
+    "en": "English",
+    "kn": "ಕನ್ನಡ (Kannada)",
+    "hi": "हिंदी (Hindi)",
+    "te": "తెలుగు (Telugu)",
+    "ta": "தமிழ் (Tamil)",
+    "ml": "മലയാളം (Malayalam)"
+  }
+}

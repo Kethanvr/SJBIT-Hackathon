@@ -1,0 +1,12 @@
+{
+  "modalTitlePreview": "ಚಿತ್ರ ಪೂರ್ವವೀಕ್ಷಣೆ",
+  "modalTitleTakePhoto": "ಫೋಟೋ ತೆಗೆಯಿರಿ",
+  "cameraErrorTitle": "ಕ್ಯಾಮರಾ ದೋಷ",
+  "cameraErrorPermissions": "ಬ್ರೌಸರ್ ಅನುಮತಿಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.",
+  "alertCameraAccessError": "ಕ್ಯಾಮರಾವನ್ನು ಪ್ರವೇಶಿಸಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ. ದಯವಿಟ್ಟು ನಿಮ್ಮ ಕ್ಯಾಮರಾ ಅನುಮತಿಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.",
+  "buttonRetake": "ಮತ್ತೆ ತೆಗೆಯಿರಿ",
+  "buttonUsePhoto": "ಫೋಟೋ ಬಳಸಿ",
+  "buttonUploadImage": "ಚಿತ್ರವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
+  "buttonTakePhoto": "ಫೋಟೋ ತೆಗೆಯಿರಿ",
+  "capturedImageAlt": "ಸೆರೆಹಿಡಿದ"
+}

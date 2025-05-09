@@ -1,0 +1,50 @@
+{
+  "title": "MediScan Gold",
+  "subtitle": "Premium features for enhanced healthcare management",
+  "activationSuccess": "MediScan Gold Activated!",
+  "welcomeMessage": "Welcome to MediScan Gold! Enjoy your premium features.",
+  "congratulations": "Congratulations! Your Gold membership is now active!",
+  "refreshPrompt": "To fully activate all Gold features, please refresh the app or close and reopen it.",
+  "refreshButton": "Refresh Now",
+  "refreshLater": "I'll refresh later",
+  "features": {
+    "unlimitedScans": "Unlimited Scans",
+    "unlimitedScansDesc": "Scan medications without any daily limits",
+    "prioritySupport": "Priority Support",
+    "prioritySupportDesc": "Get faster responses from our support team",
+    "advancedAI": "Advanced AI Features",
+    "advancedAIDesc": "Access to more detailed AI analysis and recommendations",
+    "familyAccounts": "Family Accounts",
+    "familyAccountsDesc": "Manage multiple profiles for family members",
+    "exclusiveTheme": "Gold theme and exclusive badge across the app",
+    "batchScanning": "Batch scanning and enhanced medication info",
+    "unlimitedChats": "Unlimited AI chats and advanced analysis",
+    "monthlyCoins": "Monthly free KCoins and special offers",
+    "earlyAccess": "Early access to new features"
+  },
+  "getGold": {
+    "buttonText": "Get Mediscan Gold",
+    "description": "Tap to Activate exclusive benefits!",
+    "codePlaceholder": "Enter code to redeem Gold membership",
+    "redeemButton": "Redeem",
+    "processingButton": "Processing...",
+    "alreadyGold": "You are already a Gold User!",
+    "invalidCode": "Invalid code. Please try again.",
+    "success": "Success! Activating Gold status...",
+    "error": "Error redeeming code. Please try again.",
+    "codeInstructions": "Use code 'IAMGOLD' to activate your membership"
+  },
+  "promoBanner": {
+    "title": "Unlock premium health tools and stand out as a Gold User!"
+  },
+  "deactivation": {
+    "title": "Deactivate Gold Plan?",
+    "description": "Type DEACTIVATE below to confirm and lose Gold benefits.",
+    "confirmPrompt": "DEACTIVATE",
+    "buttonText": "Deactivate Gold Plan",
+    "successTitle": "Thank you for being a Gold User!",
+    "successMessage": "You can upgrade to Gold again anytime from your account page.",
+    "refreshButton": "Refresh & Continue",
+    "closeButton": "Close"
+  }
+}

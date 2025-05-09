@@ -1,0 +1,106 @@
+{
+  "title": "How to Use MediScan",
+  "introduction": {
+    "title": "Welcome to MediScan",
+    "description": "MediScan is your personal medication assistant, helping you understand your medications, manage your health records, and get answers to your medical questions.",
+    "guide": "Follow this guide to learn how to use all the features of MediScan effectively."
+  },
+  "sections": {
+    "scanning": {
+      "title": "Scanning Medications",
+      "description": "Learn how to scan medications and get accurate information",
+      "steps": {
+        "step1": {
+          "title": "Open Scanner",
+          "description": "Tap on the scanner icon in the bottom navigation"
+        },
+        "step2": {
+          "title": "Position Medication",
+          "description": "Place the medication packaging in the camera frame"
+        },
+        "step3": {
+          "title": "Take Photo",
+          "description": "Tap the capture button to take a clear photo"
+        },
+        "step4": {
+          "title": "Review Results",
+          "description": "View the detailed information about your medication"
+        }
+      }
+    },
+    "chatting": {
+      "title": "Chatting with MediScan AI",
+      "description": "Get answers to your medical questions from our AI",
+      "steps": {
+        "step1": {
+          "title": "Start a Chat",
+          "description": "Tap on the chat option from the home screen or bottom navigation"
+        },
+        "step2": {
+          "title": "Ask Your Question",
+          "description": "Type your health or medication question in the text field"
+        },
+        "step3": {
+          "title": "Get AI Response",
+          "description": "Receive a detailed response based on reliable medical information"
+        },
+        "step4": {
+          "title": "Follow Up",
+          "description": "Ask follow-up questions to get more specific information"
+        }
+      }
+    },
+    "healthRecords": {
+      "title": "Managing Health Records",
+      "description": "Keep track of your medications and health data",
+      "steps": {
+        "step1": {
+          "title": "Access Health Records",
+          "description": "Navigate to the Health Records section from the home screen"
+        },
+        "step2": {
+          "title": "Add New Record",
+          "description": "Tap the + button to add a new medication or health record"
+        },
+        "step3": {
+          "title": "Set Reminders",
+          "description": "Configure medication reminders for timely intake"
+        },
+        "step4": {
+          "title": "View History",
+          "description": "Access your complete health and medication history"
+        }
+      }
+    },
+    "gold": {
+      "title": "MediScan Gold Features",
+      "description": "Upgrade to Gold for premium features",
+      "steps": {
+        "step1": {
+          "title": "Unlimited Scans",
+          "description": "Scan medications without any daily limits"
+        },
+        "step2": {
+          "title": "Priority Support",
+          "description": "Get faster responses from our support team"
+        },
+        "step3": {
+          "title": "Advanced AI Features",
+          "description": "Access to more detailed AI analysis and recommendations"
+        },
+        "step4": {
+          "title": "Family Accounts",
+          "description": "Manage multiple profiles for family members"
+        }
+      }
+    }
+  },  "additionalHelp": {
+    "title": "Need More Help?",
+    "description": "If you need additional assistance, we're here to help. Contact our support team or check out these resources:",
+    "aboutCreators": "About the Creators",
+    "contact": "Contact Support",
+    "faq": "Frequently Asked Questions"
+  },
+  "feedbackButton": "Send Feedback or Suggestions",
+  "getStartedButton": "Get Started with MediScan"
+}

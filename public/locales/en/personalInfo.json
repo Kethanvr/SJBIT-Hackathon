@@ -1,0 +1,78 @@
+{
+  "title": "Personal Information",
+  "subtitle": "Manage your personal details and profile information",
+  "sections": {
+    "profile": {
+      "title": "Profile Information",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "dateOfBirth": "Date of Birth",
+      "gender": "Gender",
+      "genderOptions": {
+        "male": "Male",
+        "female": "Female",
+        "other": "Other",
+        "preferNotToSay": "Prefer not to say"
+      },
+      "language": "Preferred Language"
+    },
+    "avatar": {
+      "title": "Profile Photo",
+      "upload": "Upload Photo",
+      "remove": "Remove Photo",
+      "change": "Change Photo",
+      "dropzone": "Drag and drop an image here, or click to select",
+      "requirements": "JPG or PNG, max 2MB"
+    },
+    "healthDetails": {
+      "title": "Health Information",
+      "height": "Height",
+      "weight": "Weight",
+      "bloodType": "Blood Type",
+      "bloodTypeOptions": {
+        "aPositive": "A+",
+        "aNegative": "A-",
+        "bPositive": "B+",
+        "bNegative": "B-",
+        "abPositive": "AB+",
+        "abNegative": "AB-",
+        "oPositive": "O+",
+        "oNegative": "O-",
+        "unknown": "Unknown"
+      },
+      "allergies": "Allergies",
+      "chronicConditions": "Chronic Conditions",
+      "medications": "Current Medications",
+      "addItem": "Add Item"
+    },
+    "emergencyContact": {
+      "title": "Emergency Contact",
+      "name": "Contact Name",
+      "relationship": "Relationship",
+      "phone": "Contact Phone",
+      "email": "Contact Email"
+    }
+  },
+  "buttons": {
+    "save": "Save Changes",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "messages": {
+    "saving": "Saving changes...",
+    "saveSuccess": "Personal information updated successfully",
+    "saveError": "Failed to update information. Please try again.",
+    "deleteConfirm": "Are you sure you want to delete this information?",
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "invalidPhone": "Please enter a valid phone number"
+  },
+  "privacy": {
+    "title": "Privacy Notice",
+    "description": "Your personal information is securely stored and never shared with third parties without your consent.",
+    "moreInfo": "Learn More"
+  }
+}

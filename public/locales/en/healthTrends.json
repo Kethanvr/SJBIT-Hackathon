@@ -1,0 +1,63 @@
+{
+  "title": "Health Trends",
+  "subtitle": "Track and analyze your health over time",
+  "timeRanges": {
+    "week": "Last 7 days",
+    "month": "Last 30 days",
+    "quarter": "Last 3 months",
+    "year": "Last 12 months",
+    "custom": "Custom Range"
+  },
+  "medications": {
+    "title": "Medication Usage",
+    "subtitle": "Track your medication usage patterns",
+    "adherence": "Medication Adherence",
+    "adherenceScore": "Adherence Score",
+    "mostFrequent": "Most Frequent Medications",
+    "noData": "No medication data available for this time period",
+    "totalScans": "Total Scans",
+    "uniqueMedications": "Unique Medications"
+  },
+  "vitals": {
+    "title": "Vital Signs",
+    "subtitle": "Monitor your vital sign measurements",
+    "bloodPressure": "Blood Pressure",
+    "heartRate": "Heart Rate",
+    "weight": "Weight",
+    "bloodGlucose": "Blood Glucose",
+    "temperature": "Temperature",
+    "oxygenLevel": "Oxygen Saturation",
+    "noData": "No vital sign data available for this time period",
+    "addReading": "Add Reading"
+  },
+  "insights": {
+    "title": "Health Insights",
+    "subtitle": "Personalized insights based on your health data",
+    "noInsights": "No insights available yet. Add more health data to receive personalized insights.",
+    "medicationInsight": "Medication Insight",
+    "vitalInsight": "Vital Sign Insight",
+    "generalInsight": "General Health Insight"
+  },
+  "export": {
+    "title": "Export Data",
+    "subtitle": "Download your health data in different formats",
+    "pdf": "PDF Report",
+    "csv": "CSV Data",
+    "json": "JSON Data",
+    "timeRange": "Select Time Range",
+    "dataTypes": "Select Data Types",
+    "generateReport": "Generate Report"
+  },
+  "graphs": {
+    "showLegend": "Show Legend",
+    "hideLegend": "Hide Legend",
+    "zoomIn": "Zoom In",
+    "zoomOut": "Zoom Out",
+    "resetZoom": "Reset Zoom",
+    "noData": "No data available for graph"
+  },
+  "comingSoon": {
+    "title": "Enhanced Trends Coming Soon",
+    "description": "We're working on advanced health analytics and trends. Check back soon for these exciting features!"
+  }
+}

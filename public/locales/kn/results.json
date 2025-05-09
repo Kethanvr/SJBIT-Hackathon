@@ -1,0 +1,55 @@
+{
+  "loading": "ಫಲಿತಾಂಶಗಳನ್ನು ಪಡೆಯಲಾಗುತ್ತಿದೆ...",
+  "medicationTitle": "ಔಷಧಿ ಮಾಹಿತಿ",
+  "medicationCardUsesLabel": "ಬಳಕೆಗಳು",
+  "medicationCardWarningsLabel": "ಎಚ್ಚರಿಕೆಗಳು",
+  "medicationCardInteractionsLabel": "ಪರಸ್ಪರ ಕ್ರಿಯೆಗಳು",
+  "medicationCardDosageLabel": "ಔಷಧದ ಪ್ರಮಾಣ",
+  "medicationCardSideEffectsLabel": "ಅಡ್ಡ ಪರಿಣಾಮಗಳು",
+  "medicationCardNotFoundLabel": "ಔಷಧಿ ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ",
+  "resultPrecaution": "ಎಚ್ಚರಿಕೆ: ಈ ಮಾಹಿತಿಯು ವೈದ್ಯಕೀಯ ಸಲಹೆಯಾಗಿ ಉದ್ದೇಶಿಸಿಲ್ಲ. ದಯವಿಟ್ಟು ಆರೋಗ್ಯ ಸೇವಾ ವೃತ್ತಿಪರರನ್ನು ಸಂಪರ್ಕಿಸಿ.",
+  "suggestMedicationTitle": "ಇದು ನಿಮ್ಮ ಔಷಧಿ ಅಲ್ಲವೇ?",
+  "suggestMedicationButton": "ಸರಿಯಾದ ಔಷಧಿಯನ್ನು ಸೂಚಿಸಿ",
+  "medicationModal": {
+    "title": "ಔಷಧಿಯ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
+    "promptLabel": "ನೀವು ಸ್ಕ್ಯಾನ್ ಮಾಡಲು ಪ್ರಯತ್ನಿಸುತ್ತಿರುವ ಔಷಧಿಯ ಹೆಸರೇನು?",
+    "nameLabel": "ಔಷಧಿಯ ಹೆಸರು",
+    "namePlaceholder": "ಉದಾ.: ಪ್ಯಾರಾಸಿಟಮಾಲ್",
+    "submitButton": "ಸಲ್ಲಿಸು",
+    "cancelButton": "ರದ್ದುಮಾಡಿ"
+  },
+  "chatModal": {
+    "title": "ಡಾಕ್ಟರ್‌ನೊಂದಿಗೆ ಚಾಟ್ ಮಾಡಿ",
+    "placeholder": "ನಿಮ್ಮ ಪ್ರಶ್ನೆಯನ್ನು ಇಲ್ಲಿ ಟೈಪ್ ಮಾಡಿ...",
+    "sendButton": "ಕಳುಹಿಸಿ",
+    "loadingResponse": "ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಪಡೆಯಲಾಗುತ್ತಿದೆ..."
+  },
+  "actions": {
+    "saveTitle": "ಫಲಿತಾಂಶವನ್ನು ಉಳಿಸಿ",
+    "chatTitle": "ಔಷಧಿ ಬಗ್ಗೆ ಚಾಟ್",
+    "shareTitle": "ಫಲಿತಾಂಶ ಹಂಚಿಕೊಳ್ಳಿ",
+    "feedbackTitle": "ಪ್ರತಿಕ್ರಿಯೆ ನೀಡಿ",
+    "scanOtherTitle": "ಮತ್ತೊಂದು ಸ್ಕ್ಯಾನ್",
+    "toastSaveSuccess": "ಈ ಸ್ಕ್ಯಾನ್ ಯಶಸ್ವಿಯಾಗಿ ಉಳಿಸಲಾಗಿದೆ",
+    "toastSaveError": "ಸ್ಕ್ಯಾನ್‌ ಉಳಿಸುವಲ್ಲಿ ದೋಷ",
+    "toastShareSuccess": "ಯಶಸ್ವಿಯಾಗಿ ಹಂಚಿಕೊಳ್ಳಲಾಗಿದೆ!"
+  },
+  "shareModal": {
+    "title": "ಫಲಿತಾಂಶ ಹಂಚಿಕೊಳ್ಳಿ",
+    "description": "ಈ ಫಲಿತಾಂಶವನ್ನು ಹೇಗೆ ಹಂಚಿಕೊಳ್ಳಲು ಬಯಸುತ್ತೀರಿ?",
+    "linkOption": "ಲಿಂಕ್ ಹಂಚಿಕೊಳ್ಳಿ",
+    "pdfOption": "PDF ಎಕ್ಸ್‌ಪೋರ್ಟ್ ಮಾಡಿ",
+    "imageOption": "ಚಿತ್ರವಾಗಿ ಉಳಿಸಿ",
+    "emailOption": "ಇಮೇಲ್ ಕಳುಹಿಸಿ",
+    "loadingMessage": "PDF ರಚಿಸಲಾಗುತ್ತಿದೆ..."
+  },
+  "feedbackModal": {
+    "title": "ಫಲಿತಾಂಶ ಕುರಿತು ಪ್ರತಿಕ್ರಿಯೆ",
+    "ratingLabel": "ಫಲಿತಾಂಶದ ನಿಖರತೆಯನ್ನು ರೇಟ್ ಮಾಡಿ",
+    "commentLabel": "ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆ",
+    "commentPlaceholder": "ಸುಧಾರಣೆಗಾಗಿ ಯಾವುದೇ ಸಲಹೆಗಳನ್ನು ನಮೂದಿಸಿ",
+    "submitButton": "ಪ್ರತಿಕ್ರಿಯೆ ಸಲ್ಲಿಸಿ",
+    "thankYouMessage": "ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆಗೆ ಧನ್ಯವಾದಗಳು!"
+  },
+  "enterManually": "ಔಷಧಿಯ ಮಾಹಿತಿಯನ್ನು ಮ್ಯಾನ್ಯುಅಲ್ ಆಗಿ ನಮೂದಿಸಿ"
+}

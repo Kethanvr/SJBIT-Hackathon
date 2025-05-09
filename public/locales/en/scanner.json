@@ -1,0 +1,78 @@
+{
+  "title": "Medicine Scanner",
+  "scanButton": "Scan Medicine",
+  "uploadButton": "Upload Image",
+  "cameraPermission": {
+    "requesting": "Requesting camera access...",
+    "granted": "Camera access granted",
+    "denied": "Camera access denied",
+    "prompt": "Please allow camera access to scan medications",
+    "settings": "Open Settings"
+  },
+  "cameraControls": {
+    "switchCamera": "Switch Camera",
+    "flash": "Flash",
+    "flashOn": "Flash On",
+    "flashOff": "Flash Off",
+    "flashAuto": "Flash Auto",
+    "capture": "Capture",
+    "cancel": "Cancel"
+  },
+  "scanning": {
+    "preparing": "Preparing camera...",
+    "instructions": "Position medication package in frame",
+    "tips": "Ensure good lighting and focus on the medication name",
+    "processing": "Processing scan...",
+    "analyzing": "Analyzing image...",
+    "identifyingMedication": "Identifying medication...",
+    "fetchingInformation": "Fetching medication details..."
+  },
+  "upload": {
+    "instructions": "Upload an image of your medication",
+    "dragDrop": "Drag and drop an image here or click to browse",
+    "browse": "Browse Files",
+    "requirements": "JPG, PNG or HEIC format, max 10MB",
+    "processing": "Processing your image...",
+    "compressing": "Compressing image..."
+  },
+  "scanGuide": {
+    "title": "Scanning Tips",
+    "tips": [
+      "Position the medication package in good lighting",
+      "Capture the medication name and details clearly",
+      "Hold the camera steady for better results",
+      "Make sure the packaging is free from glare",
+      "Flatten packaging if possible for better results"
+    ],
+    "showGuide": "Show Scanning Guide",
+    "hideGuide": "Hide Guide"
+  },
+  "results": {
+    "found": "Medication identified!",
+    "notFound": "Medication not identified",
+    "lowConfidence": "Low confidence match",
+    "viewDetails": "View Details",
+    "tryAgain": "Try Again"
+  },
+  "errors": {
+    "cameraError": "Camera error. Please try again.",
+    "processingError": "Error processing image. Please try again.",
+    "uploadError": "Error uploading image. Please try again.",
+    "serverError": "Server error. Please try again later.",
+    "noNetwork": "No internet connection. Please check your connection.",
+    "timeout": "Request timed out. Please try again."
+  },
+  "scanLimits": {
+    "title": "Scan Limit",
+    "freeLimit": "You have {{remaining}} of {{total}} free scans remaining today",
+    "upgradePrompt": "Upgrade to Gold for unlimited scans",
+    "limitReached": "Daily scan limit reached",
+    "resetTime": "Limit resets in {{time}}",
+    "upgrade": "Upgrade Now"
+  },
+  "recentScans": {
+    "title": "Recent Scans",
+    "viewAll": "View All",
+    "noRecentScans": "No recent scans"
+  }
+}

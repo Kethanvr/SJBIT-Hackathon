@@ -1,0 +1,80 @@
+{
+  "title": "Notifications",
+  "markAllRead": "Mark all as read",
+  "enableNotifications": "Enable Notifications",
+  "stayUpdated": "Get notified about important updates and scan results",
+  "enable": "Enable",
+  "loading": "Loading notifications...",
+  "empty": "No notifications yet",
+  "emptyDescription": "When you receive notifications, they will appear here",
+  "markAsRead": "Mark as read",
+  "delete": "Delete",
+  "errors": {
+    "fetchFailed": "Failed to load notifications"
+  },
+  "noNotifications": "No notifications",
+  "emptyMessage": "You don't have any notifications at the moment",
+  "clearAll": "Clear all",
+  "unread": "Unread",
+  "all": "All",
+  "notificationSettings": "Notification Settings",
+  "loadMore": "Load more",
+  "filters": {
+    "title": "Filter Notifications",
+    "all": "All Notifications",
+    "unread": "Unread Only",
+    "medication": "Medication Reminders",
+    "system": "System Notifications",
+    "updates": "App Updates",
+    "health": "Health Alerts"
+  },
+  "types": {
+    "medication": "Medication",
+    "system": "System",
+    "update": "Update",
+    "health": "Health",
+    "reminder": "Reminder",
+    "alert": "Alert"
+  },
+  "timeFrames": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "thisWeek": "This Week",
+    "thisMonth": "This Month",
+    "older": "Older"
+  },
+  "actions": {
+    "view": "View",
+    "dismiss": "Dismiss",
+    "enable": "Enable",
+    "settings": "Settings",
+    "update": "Update",
+    "remind": "Remind Later"
+  },
+  "settings": {
+    "title": "Notification Preferences",
+    "pushNotifications": "Push Notifications",
+    "emailNotifications": "Email Notifications",
+    "inAppNotifications": "In-App Notifications",
+    "medicationReminders": "Medication Reminders",
+    "systemUpdates": "System Updates",
+    "healthAlerts": "Health Alerts",
+    "appUpdates": "App Updates",
+    "scanResults": "Scan Results",
+    "saveSettings": "Save Settings"
+  },
+  "permissionRequest": {
+    "title": "Enable Notifications",
+    "message": "Allow notifications to receive important updates about your medications and health",
+    "allow": "Allow",
+    "notNow": "Not Now",
+    "neverAsk": "Don't Ask Again"
+  },
+  "success": {
+    "settingsSaved": "Notification settings saved successfully"
+  },
+  "error": {
+    "failedToLoad": "Failed to load notifications",
+    "failedToSave": "Failed to save notification settings"
+  }
+}
