@@ -60,6 +60,10 @@ const Scanner = () => {
     alert("Unable to access camera. Please check your camera permissions.");
   };
 
+  const handleAddCoin = () => {
+    navigate("/account/coins");
+  };
+
   const capture = useCallback(() => {
     const imageSrc = webcamRef.current?.getScreenshot();
     if (imageSrc) {
@@ -81,10 +85,7 @@ const Scanner = () => {
     setUploadMessage("Analyzing image...");
 
     try {
-      // Step 1: Optimize the image
       const optimizedImage = await optimizeImageIfPossible(imageToSend);
-
-      // Step 2: Analyze the image using fetchWithFallback
       const results = await fetchWithFallback("/api/analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -94,19 +95,16 @@ const Scanner = () => {
       setAnalysisResults(results.data);
       setUploadMessage("Analysis complete!");
 
-      // Step 3: Get the current user
       const {
         data: { user },
       } = await supabase.auth.getUser();
       if (user && results) {
         try {
-          // Step 4: Get the medicine name for organization
           const medicineName =
             results.data?.product_identification?.medicine_name ||
             "Unknown Medicine";
           console.log("Saving scan with medicine name:", medicineName);
 
-          // Step 5: Process the scan with coin deduction
           setUploadMessage("Saving scan to your history...");
           const scanResult = await scanService.processScan(user.id, {
             rawData: results.data,
@@ -120,7 +118,7 @@ const Scanner = () => {
 
           if (scanResult) {
             console.log("Scan saved successfully:", scanResult.scanId);
-            setPreviewImage(optimizedImage); // Keep using the optimized image for preview
+            setPreviewImage(optimizedImage);
           }
         } catch (saveError) {
           console.error("Error saving scan:", saveError);
@@ -131,21 +129,17 @@ const Scanner = () => {
             setCoinBalance(0);
             alert("Insufficient coins to perform scan. Please add more coins.");
           } else {
-            // Continue showing results even if saving failed
             alert("Error saving scan. Please try again.");
           }
         }
       }
-      await refreshCoinBalance(); // Update coin balance after scan
+      await refreshCoinBalance();
     } catch (error) {
       console.error("Image analysis failed:", error);
       setNetworkError(true);
-
-      // Simplified error handling as fetchWithFallback throws a consolidated error
       alert(
         `Analysis failed: ${error.message}. Please check your connection or try again.`
       );
-
       setUploadMessage("Analysis failed");
       if (error.message && error.message.includes("zero coins")) {
         setCoinBalance(0);
@@ -161,27 +155,25 @@ const Scanner = () => {
     if (file) {
       const reader = new FileReader();
       reader.onloadstart = () => {
-        setIsProcessing(true); // Start processing indicator
-        setUploadMessage(t("uploading")); // Show uploading message
+        setIsProcessing(true);
+        setUploadMessage(t("uploading"));
       };
       reader.onloadend = () => {
         const imageData = reader.result;
         setCapturedImage(imageData);
         setPreviewImage(imageData);
         setUploadMessage(t("uploadSuccess"));
-        // Keep processing indicator until analysis is done
         handleAnalyze(imageData);
       };
       reader.onerror = () => {
         setIsProcessing(false);
-        setUploadMessage(t("uploadError")); // Show error message
+        setUploadMessage(t("uploadError"));
         console.error("Error reading file");
       };
       reader.readAsDataURL(file);
     }
   };
 
-  // Fetch profile to check theme preferences etc
   useEffect(() => {
     const fetchProfile = async () => {
       setProfileLoading(true);
@@ -191,6 +183,7 @@ const Scanner = () => {
         } = await supabase.auth.getUser();
         if (user) {
           const profile = await getProfile(user.id);
+          setCoinBalance(typeof profile.coins === "number" ? profile.coins : 0);
         }
       } catch (e) {
         console.error("Error fetching profile:", e);
@@ -201,7 +194,6 @@ const Scanner = () => {
     fetchProfile();
   }, []);
 
-  // After scan, refresh coin balance
   const refreshCoinBalance = async () => {
     try {
       const {
@@ -223,8 +215,8 @@ const Scanner = () => {
           setAnalysisResults(null);
           setPreviewImage(null);
           setCapturedImage(null);
-          setIsProcessing(false); // Reset processing state
-          setUploadMessage(""); // Clear message
+          setIsProcessing(false);
+          setUploadMessage("");
         }}
       />
     );
@@ -232,10 +224,9 @@ const Scanner = () => {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      {/* Use HomeHeader with sidebar button */}
       <HomeHeader
-        onOpenSidebar={() => setIsSidebarOpen(true)} // Use sidebar button like in Home page
-        onOpenNotifications={() => {}} // No notifications panel here
+        onOpenSidebar={() => setIsSidebarOpen(true)}
+        onOpenNotifications={() => {}}
         coins={coinBalance}
         onAddCoin={handleAddCoin}
       />
@@ -250,52 +241,33 @@ const Scanner = () => {
               screenshotFormat="image/jpeg"
               videoConstraints={videoConstraints}
               onUserMediaError={handleCameraError}
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover"
             />
           )}
         </div>
 
-        <div className="w-full px-6 py-4 space-y-3 sticky bottom-0 bg-white/80 backdrop-blur-sm z-10 border-t border-gray-200">
-          <FileUploadButton
-            onClick={() => fileInputRef.current.click()}
-            disabled={isProcessing}
-            label={t("uploadButton")}
-            inputRef={fileInputRef}
-            onChange={handleFileUpload}
-          />
+        <div className="w-full px-4 py-4 flex flex-col items-center space-y-4">
           <button
             onClick={capture}
-            className="w-full bg-blue-600 text-white py-3 rounded-full font-medium flex items-center justify-center space-x-2 hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:bg-blue-200"
-            disabled={isProcessing || cameraError}
+            className="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center shadow-lg hover:bg-blue-700 transition-colors"
           >
-            {" "}
-            <FiCamera className="w-5 h-5" />
-            <span>{t("scanButton")}</span>
+            <FiCamera className="w-8 h-8 text-white" />
           </button>
-        </div>
-      </div>{" "}
-      {isProcessing && (
-        <div className="fixed inset-0 bg-white/80 flex flex-col items-center justify-center z-50 p-4">
-          <StandardLoadingIndicator
-            size="lg"
-            variant="spinner"
-            message={uploadMessage || t("processing")}
-            note={t("processingNote")}
+
+          <FileUploadButton
+            onFileSelect={handleFileUpload}
+            isProcessing={isProcessing}
           />
+
+          {uploadMessage && (
+            <div className="text-sm text-gray-600 mt-2">{uploadMessage}</div>
+          )}
         </div>
-      )}
-      {networkError && !isProcessing && (
-        <NetworkErrorBanner message={t("connectionIssues")} />
-      )}
-      <FeedbackButton isFloating={true} />
-      <BottomNav />
-      {/* Add Sidebar */}
-      <Sidebar
-        isOpen={isSidebarOpen}
-        onClose={() => setIsSidebarOpen(false)}
-        coins={coinBalance}
-        onAddCoin={handleAddCoin}
-      />
+      </div>
+
+      {isProcessing && <LoadingOverlay message={uploadMessage} />}
+      {networkError && <NetworkErrorBanner />}
+      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
     </div>
   );
 };

@@ -28,14 +28,14 @@ const preventTextScaling = () => {
 };
 
 // Register error handler for uncaught errors
-window.addEventListener('error', (event) => {
-  console.error('Global error:', event.error);
+window.addEventListener("error", (event) => {
+  console.error("Global error:", event.error);
   // Could add error reporting service here
 });
 
-// Register error handler for unhandled promise rejections 
-window.addEventListener('unhandledrejection', (event) => {
-  console.error('Unhandled rejection:', event.reason);
+// Register error handler for unhandled promise rejections
+window.addEventListener("unhandledrejection", (event) => {
+  console.error("Unhandled rejection:", event.reason);
   // Could add error reporting service here
 });
 

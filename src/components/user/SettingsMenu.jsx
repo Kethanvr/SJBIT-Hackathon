@@ -29,12 +29,7 @@ const SettingsMenu = ({ hidePro = false }) => {
       label: t("security"),
       to: "/account/security",
     },
-    {
-      id: "health",
-      icon: <FiHeart className="w-6 h-6 text-gray-400" />,
-      label: t("healthManagement"),
-      to: "/health/coming-soon?feature=health-management",
-    },
+
     // Only show payments if hidePro is false
     ...(!hidePro ? [{
       id: "payments",

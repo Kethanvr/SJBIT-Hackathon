@@ -90,14 +90,15 @@ function Home() {
 
                 {/* Recommendations Section */}
                 <RecommendationsSection onStartNewChat={handleNewChat} />
- {/* Health Challenges & Rewards Card */}
+
+                {/* Health Challenges & Rewards Card */}
                 <HealthChallengesCard />
 
-{/* Doctor Consultation Card */}
+                {/* Doctor Consultation Card */}
                 <DoctorConsultationCard />
-                  {/* Health Score Card */}
+
+                {/* Health Score Card */}
                 <HealthScoreCard />
-               
 
                 {/* Health Insurance Card */}
                 <HealthInsuranceCard />
@@ -107,12 +108,8 @@ function Home() {
                   <CommunityCard />
                 </Suspense>
 
-                
-
                 {/* Medicine Reminder Card */}
                 <MedicineReminderCard />
-
-              
               </div>
             </main>
           </>

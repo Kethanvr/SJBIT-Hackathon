@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html class="light" lang="en">  <head>
+<html class="light" lang="en">
+  <head>
     <meta charset="UTF-8" />
-    <!-- Updated favicon links -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -10,41 +10,45 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <title>MediScan - Smart Medicine Scanner</title>
-    <!-- Google AdSense Auto Ads -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6985167612880362" crossorigin="anonymous"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6985167612880362"
+      crossorigin="anonymous"
+    ></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
-    />    <!-- OneSignal Push Notification -->
-    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    />
+    <script
+      src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+      defer
+    ></script>
     <script>
       window.OneSignalDeferred = window.OneSignalDeferred || [];
-      
-      // Only initialize OneSignal in production environment
-      const isProduction = window.location.hostname === 'medi-scan-kethan.vercel.app';
-      
+      const isProduction =
+        window.location.hostname === "medi-scan-kethan.vercel.app";
       if (isProduction) {
-        OneSignalDeferred.push(async function(OneSignal) {
+        OneSignalDeferred.push(async function (OneSignal) {
           await OneSignal.init({
             appId: "5e7feac6-051c-437f-bc50-180208ee5a84",
           });
         });
       } else {
-        // Create mock OneSignal for development
         window.OneSignal = window.OneSignal || {
           Notifications: {
             permission: false,
-            requestPermission: () => console.log("Mock OneSignal: Permission requested"),
+            requestPermission: () =>
+              console.log("Mock OneSignal: Permission requested"),
             addEventListener: () => {},
-            removeEventListener: () => {}
+            removeEventListener: () => {},
           },
           User: {
             PushSubscription: {
               addEventListener: () => {},
-              removeEventListener: () => {}
+              removeEventListener: () => {},
             },
-            addExternalUserId: () => {}
-          }
+            addExternalUserId: () => {},
+          },
         };
         console.log("OneSignal disabled in development environment");
       }
