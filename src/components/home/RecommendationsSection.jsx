@@ -64,8 +64,7 @@ const RecommendationsSection = ({ onStartNewChat }) => {
       buttonText: t('recommendations.chat.button'),
       buttonColor: "bg-yellow-600",
       onClick: onStartNewChat
-    },
-    {
+    },    {
       id: "record",
       bgColor: "bg-teal-50",
       title: t('recommendations.record.title'),
@@ -73,6 +72,60 @@ const RecommendationsSection = ({ onStartNewChat }) => {
       buttonText: t('recommendations.record.button'),
       buttonColor: "bg-teal-600",
       linkTo: "/health/records"
+    },
+    {
+      id: "challenges",
+      bgColor: "bg-purple-50",
+      title: t('recommendations.challenges.title', 'Health Challenges'),
+      description: t('recommendations.challenges.description', 'Participate in health challenges and earn rewards'),
+      buttonText: t('recommendations.challenges.button', 'View Challenges'),
+      buttonColor: "bg-purple-600",
+      linkTo: "/health/challenges"
+    },
+    {
+      id: "consultation",
+      bgColor: "bg-blue-50",
+      title: t('recommendations.consultation.title', 'Doctor Consultation'),
+      description: t('recommendations.consultation.description', 'Book a consultation with our experienced doctors'),
+      buttonText: t('recommendations.consultation.button', 'Book Now'),
+      buttonColor: "bg-blue-600",
+      linkTo: "/health/consultation"
+    },
+    {
+      id: "healthScore",
+      bgColor: "bg-green-50",
+      title: t('recommendations.healthScore.title', 'Health Score'),
+      description: t('recommendations.healthScore.description', 'Check your overall health score and improvements'),
+      buttonText: t('recommendations.healthScore.button', 'Check Score'),
+      buttonColor: "bg-green-600",
+      linkTo: "/health/score"
+    },
+    {
+      id: "insurance",
+      bgColor: "bg-red-50",
+      title: t('recommendations.insurance.title', 'Health Insurance'),
+      description: t('recommendations.insurance.description', 'View and manage your health insurance plans'),
+      buttonText: t('recommendations.insurance.button', 'View Plans'),
+      buttonColor: "bg-red-600",
+      linkTo: "/health/insurance"
+    },
+    {
+      id: "community",
+      bgColor: "bg-orange-50",
+      title: t('recommendations.community.title', 'Community'),
+      description: t('recommendations.community.description', 'Connect with others and share your health journey'),
+      buttonText: t('recommendations.community.button', 'Join Community'),
+      buttonColor: "bg-orange-600",
+      linkTo: "/community"
+    },
+    {
+      id: "medicine",
+      bgColor: "bg-indigo-50",
+      title: t('recommendations.medicine.title', 'Medicine Reminder'),
+      description: t('recommendations.medicine.description', 'Set and manage your medicine reminders'),
+      buttonText: t('recommendations.medicine.button', 'Set Reminders'),
+      buttonColor: "bg-indigo-600",
+      linkTo: "/health/medicine"
     },
 
     // Add coming soon cards with indices 1-3
