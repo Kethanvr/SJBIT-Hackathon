@@ -77,28 +77,6 @@ export function useHomePageLogic() {
     navigate("/chat");
   };
 
-  // Coin state and fetch logic
-  const [coins, setCoins] = useState(0);
-
-  // Fetch coin balance when session changes or sidebar opens
-  useEffect(() => {
-    const fetchCoins = async () => {
-      if (!session?.user) return;
-      const { data: profile } = await supabase
-        .from("profiles")
-        .select("coins")
-        .eq("id", session.user.id)
-        .single();
-      setCoins(profile?.coins ?? 0);
-    };
-    if (session?.user) fetchCoins();
-  }, [session, isSidebarOpen]);
-
-  // Add Coin handler (placeholder)
-  const handleAddCoin = () => {
-    alert('Coin top-up coming soon!');
-  };
-
   return {
     session,
     isSidebarOpen,
@@ -109,8 +87,6 @@ export function useHomePageLogic() {
     showWelcome,
     handleWelcomeComplete,
     handleCloseUpdatesOverlay,
-    handleNewChat,
-    coins,
-    handleAddCoin
+    handleNewChat
   };
 }

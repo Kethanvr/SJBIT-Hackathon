@@ -52,52 +52,6 @@ export const useProfile = (userId) => {
     }
   };
 
-  // Handle adding coins to profile
-  const addCoins = async (amount) => {
-    try {
-      if (!profile) {
-        throw new Error('Profile not loaded');
-      }
-      
-      const updatedProfile = await profileService.addCoins(profile.id, amount);
-      setProfile(updatedProfile);
-      return { success: true, profile: updatedProfile };
-    } catch (err) {
-      console.error('Error adding coins:', err);
-      return { success: false, error: err.message || 'Failed to add coins' };
-    }
-  };
-
-  // Handle subtracting coins from profile
-  const subtractCoins = async (amount) => {
-    try {
-      if (!profile) {
-        throw new Error('Profile not loaded');
-      }
-      
-      const updatedProfile = await profileService.subtractCoins(profile.id, amount);
-      setProfile(updatedProfile);
-      return { success: true, profile: updatedProfile };
-    } catch (err) {
-      console.error('Error subtracting coins:', err);
-      return { success: false, error: err.message || 'Failed to subtract coins' };
-    }
-  };
-
-  // Check if user has enough coins
-  const hasEnoughCoins = async (amount) => {
-    try {
-      if (!profile) {
-        throw new Error('Profile not loaded');
-      }
-      
-      return await profileService.hasEnoughCoins(profile.id, amount);
-    } catch (err) {
-      console.error('Error checking coins:', err);
-      return false;
-    }
-  };
-
   // Upload avatar
   const uploadAvatar = async (file) => {
     try {
@@ -150,9 +104,6 @@ export const useProfile = (userId) => {
     uploading,
     fetchProfile,
     updateProfile: updateProfileData,
-    addCoins,
-    subtractCoins,
-    hasEnoughCoins,
     uploadAvatar
   };
 };

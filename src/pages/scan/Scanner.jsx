@@ -181,9 +181,9 @@ const Scanner = () => {
     }
   };
 
-  // Fetch coin balance on mount
+  // Fetch profile to check theme preferences etc
   useEffect(() => {
-    const fetchCoinBalance = async () => {
+    const fetchProfile = async () => {
       setProfileLoading(true);
       try {
         const {
@@ -191,17 +191,14 @@ const Scanner = () => {
         } = await supabase.auth.getUser();
         if (user) {
           const profile = await getProfile(user.id);
-          setCoinBalance(typeof profile.coins === "number" ? profile.coins : 0);
-        } else {
-          setCoinBalance(0);
         }
       } catch (e) {
-        setCoinBalance(0);
+        console.error("Error fetching profile:", e);
       } finally {
         setProfileLoading(false);
       }
     };
-    fetchCoinBalance();
+    fetchProfile();
   }, []);
 
   // After scan, refresh coin balance
@@ -233,12 +230,6 @@ const Scanner = () => {
     );
   }
 
-  // Disable scan/upload if no coins
-  const insufficientCoins = !profileLoading && coinBalance === 0;
-  const handleAddCoin = () => {
-    navigate("/payments"); // Example navigation
-  };
-
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Use HomeHeader with sidebar button */}
@@ -265,14 +256,9 @@ const Scanner = () => {
         </div>
 
         <div className="w-full px-6 py-4 space-y-3 sticky bottom-0 bg-white/80 backdrop-blur-sm z-10 border-t border-gray-200">
-          {insufficientCoins && (
-            <div className="w-full bg-yellow-100 text-yellow-800 text-center rounded-lg py-2 mb-2 font-medium border border-yellow-300">
-              {t("insufficientCoins", "You need to add coins before scanning.")}
-            </div>
-          )}
           <FileUploadButton
             onClick={() => fileInputRef.current.click()}
-            disabled={isProcessing || insufficientCoins}
+            disabled={isProcessing}
             label={t("uploadButton")}
             inputRef={fileInputRef}
             onChange={handleFileUpload}
@@ -280,7 +266,7 @@ const Scanner = () => {
           <button
             onClick={capture}
             className="w-full bg-blue-600 text-white py-3 rounded-full font-medium flex items-center justify-center space-x-2 hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:bg-blue-200"
-            disabled={isProcessing || cameraError || insufficientCoins}
+            disabled={isProcessing || cameraError}
           >
             {" "}
             <FiCamera className="w-5 h-5" />

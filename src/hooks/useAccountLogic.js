@@ -116,7 +116,6 @@ export const useAccountLogic = () => {
     loading,
     user,
     profile,
-    coins: profile?.coins,
     chatHistory,
     handleLogout,
     handleDeleteAllData,

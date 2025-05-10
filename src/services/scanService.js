@@ -3,11 +3,6 @@ import profileService from "./profileService";
 import { handleError, ErrorTypes, AppError } from "../utils/errorHandler";
 
 /**
- * Cost of a scan in coins
- */
-const SCAN_COST = 1;
-
-/**
  * Service for handling scan-related operations
  */
 const scanService = {
@@ -26,22 +21,10 @@ const scanService = {
     }
 
     try {
-      // 1. First, check if user has enough coins
-      const hasEnough = await profileService.hasEnoughCoins(userId, SCAN_COST);
-      if (!hasEnough) {
-        throw new AppError(
-          "Insufficient coins to perform scan",
-          ErrorTypes.VALIDATION,
-          null,
-          { required: SCAN_COST, action: "scan" }
-        );
-      }
-
-      // 2. Process the scan data and get the result
-      // This would integrate with your AI model or processing logic
+      // Process the scan data and get the result
       const processedResult = await processImageData(scanData);
 
-      // 3. Save the scan record
+      // Save the scan record
       const { data: scanRecord, error: scanError } = await supabase
         .from("scans")
         .insert([
@@ -60,19 +43,11 @@ const scanService = {
 
       if (scanError) throw scanError;
 
-      // 4. Deduct coins from user's balance
-      await profileService.subtractCoins(userId, SCAN_COST);
-
-      // 5. Return the scan results
+      // Return the scan results
       return {
         success: true,
         scanId: scanRecord.id,
         results: processedResult,
-        coins: {
-          used: SCAN_COST,
-          transactionType: "deduction",
-          reason: "scan",
-        },
         timestamp: scanRecord.created_at,
       };
     } catch (error) {

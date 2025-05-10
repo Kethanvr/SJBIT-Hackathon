@@ -24,7 +24,8 @@ const profileService = {
       throw new AppError('User ID is required', ErrorTypes.VALIDATION);
     }
     
-    try {      // First try to get the existing profile and user settings
+    try {      
+      // First try to get the existing profile and user settings
       const { data: profileData, error: profileError } = await supabase
         .from('profiles')
         .select('id, username, full_name, avatar_url, email, updated_at, created_at, language, theme, role, recovery_email, phone, dob, gender')
