@@ -5,7 +5,7 @@ import { supabase } from "../../lib/supabase";
 import { useAuth } from "../../hooks/useAuth";
 import Card from "../../components/ui/Card";
 import Button from "../../components/ui/Button";
-import { CloudinaryUploadWidget } from "../../components/ui/CloudinaryUploadWidget";
+import { uploadToCloudinary } from "../../utils/cloudinaryUtils";
 
 const CreatePost = () => {
   const { t } = useTranslation();
@@ -15,12 +15,25 @@ const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const [uploadError, setUploadError] = useState(null);
   const [isPrivate, setIsPrivate] = useState(false);
   const [error, setError] = useState(null);
+  const handleImageChange = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
 
-  const handleImageUpload = (result) => {
-    if (result.event === "success") {
-      setImageUrl(result.info.secure_url);
+    // Reset errors
+    setUploadError(null);
+    setLoading(true);
+
+    try {
+      const result = await uploadToCloudinary(file, "mediscan_uploads");
+      setImageUrl(result.secure_url);
+    } catch (err) {
+      console.error("Error uploading image:", err);
+      setUploadError(t("Failed to upload image. Please try again."));
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -69,9 +82,9 @@ const CreatePost = () => {
         </Card.Header>
         <Card.Content>
           <form onSubmit={handleSubmit} className="space-y-6">
-            {error && (
+            {(error || uploadError) && (
               <div className="bg-red-50 text-red-600 p-3 rounded-lg text-sm">
-                {error}
+                {error || uploadError}
               </div>
             )}
 
@@ -106,10 +119,22 @@ const CreatePost = () => {
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 {t("Image")}
               </label>
-              <CloudinaryUploadWidget
-                onUpload={handleImageUpload}
-                folder="community_posts"
-              />
+              <div className="mt-1 flex items-center gap-4">
+                <input
+                  type="file"
+                  onChange={handleImageChange}
+                  accept="image/*"
+                  className="block w-full text-sm text-gray-500
+                    file:mr-4 file:py-2 file:px-4
+                    file:rounded-full file:border-0
+                    file:text-sm file:font-semibold
+                    file:bg-blue-50 file:text-blue-700
+                    hover:file:bg-blue-100"
+                />
+                {loading && (
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
+                )}
+              </div>
               {imageUrl && (
                 <div className="mt-2">
                   <img
@@ -145,7 +170,7 @@ const CreatePost = () => {
               >
                 {t("Cancel")}
               </Button>
-              <Button type="submit" isLoading={loading}>
+              <Button type="submit" isLoading={loading} disabled={loading}>
                 {t("Create Post")}
               </Button>
             </div>
